@@ -1,0 +1,43 @@
+.huge-header {
+    height: 90vh;
+    background-position: center center;
+    background-size: cover;
+    overflow: auto;
+}
+
+.header-content-container {
+    margin-top: 30vh;
+    text-align: center;
+}
+
+.header-text {
+    font-size: 48pt;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+.header-para {
+    margin-top: 2vh;
+    font-size: 18pt;
+}
+
+.main-container {
+    margin: -60px 30px 0;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    padding: 70px;
+    padding-top: 15px;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+}
+
+.dropdown-menu i.fa {
+    margin-right: 10px;
+}
