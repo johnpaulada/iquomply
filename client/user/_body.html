@@ -2,7 +2,7 @@
     <section>
         <div class="main-container">
             <div class="row center-text">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-lg-6 col-lg-offset-3">
                     <h2>Awesome List!</h2>
                     <ul class="list-group">
                         <li class="list-group-item" data-toggle="collapse" data-target="#survey-container">First item</li>
@@ -10,34 +10,57 @@
                         <li class="list-group-item">Third item</li>
                     </ul>
                     <div id="survey-container" class="collapse">
-                        <h3>Question #1</h3>
-                        <h4 style="text-align: left; margin: 40px;">Are you gay?</h4>
-                        <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                        	<li>
-                        		<a href="#dashboard" role="tab" data-toggle="tab">
-                        			<i class="fa fa-check-circle-o"></i>
-                        			Yes
-                        		</a>
-                        	</li>
-                        	<li class="active">
-                        		<a href="#schedule" role="tab" data-toggle="tab">
-                        			<i class="fa fa-times-circle-o"></i>
-                        			No
-                        		</a>
-                        	</li>
-                        	<li>
-                        		<a href="#tasks" role="tab" data-toggle="tab">
-                        			<i class="fa fa-question"></i>
-                        			Maybe
-                        		</a>
-                        	</li>
-                        </ul>
-                        <div class="form-group">
-                            <textarea class="form-control label-floating" placeholder="Evidence of Performance" rows="2"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control label-floating" placeholder="Actions Needed" rows="2"></textarea>
-                        </div>
+                        <div class="card-carousel">
+							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+								<div class="carousel slide" data-ride="carousel">
+
+									<!-- Indicators -->
+									<ol class="carousel-indicators">
+										<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+									</ol>
+
+									<!-- Wrapper for slides -->
+									<div class="carousel-inner">
+                                        {{#each questions}}
+    										<div class="item">
+                                                <h3 style="text-align: left;">{{@index}}. {{question}}</h3>
+                                                <br>
+                                                <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                                                	<li>
+                                                		<a href="#dashboard" role="tab" data-toggle="tab">
+                                                			<i class="fa fa-check-circle-o"></i>
+                                                			Yes
+                                                		</a>
+                                                	</li>
+                                                	<li class="active">
+                                                		<a href="#schedule" role="tab" data-toggle="tab">
+                                                			<i class="fa fa-times-circle-o"></i>
+                                                			No
+                                                		</a>
+                                                	</li>
+                                                	<li>
+                                                		<a href="#tasks" role="tab" data-toggle="tab">
+                                                			<i class="fa fa-question"></i>
+                                                			Maybe
+                                                		</a>
+                                                	</li>
+                                                </ul>
+                                                <br>
+                                                <div class="form-group">
+                                                    <textarea class="form-control label-floating" placeholder="Evidence of Performance" rows="2"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <textarea class="form-control label-floating" placeholder="Actions Needed" rows="2"></textarea>
+                                                </div>
+                                                <br><br><br>
+    										</div>
+                                        {{/each}}
+									</div>
+								</div>
+							</div>
+						</div>
                     </div>
                 </div>
             </div>
