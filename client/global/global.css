@@ -1,12 +1,26 @@
-.huge-header {
-    height: 90vh;
+.photo-header {
     background-position: center center;
     background-size: cover;
     overflow: auto;
 }
 
-.header-content-container {
+.huge-header {
+    height: 90vh;
+}
+
+.normal-header {
+    height: 400px;
+}
+
+.huge-header-content-container {
     margin-top: 30vh;
+}
+
+.normal-header-content-container {
+    margin-top: 150px;
+}
+
+.center-text {
     text-align: center;
 }
 

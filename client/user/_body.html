@@ -1,0 +1,46 @@
+<template name="userBody">
+    <section>
+        <div class="main-container">
+            <div class="row center-text">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Awesome List!</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item" data-toggle="collapse" data-target="#survey-container">First item</li>
+                        <li class="list-group-item">Second item</li>
+                        <li class="list-group-item">Third item</li>
+                    </ul>
+                    <div id="survey-container" class="collapse">
+                        <h3>Question #1</h3>
+                        <h4 style="text-align: left; margin: 40px;">Are you gay?</h4>
+                        <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                        	<li>
+                        		<a href="#dashboard" role="tab" data-toggle="tab">
+                        			<i class="fa fa-check-circle-o"></i>
+                        			Yes
+                        		</a>
+                        	</li>
+                        	<li class="active">
+                        		<a href="#schedule" role="tab" data-toggle="tab">
+                        			<i class="fa fa-times-circle-o"></i>
+                        			No
+                        		</a>
+                        	</li>
+                        	<li>
+                        		<a href="#tasks" role="tab" data-toggle="tab">
+                        			<i class="fa fa-question"></i>
+                        			Maybe
+                        		</a>
+                        	</li>
+                        </ul>
+                        <div class="form-group">
+                            <textarea class="form-control label-floating" placeholder="Evidence of Performance" rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control label-floating" placeholder="Actions Needed" rows="2"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
