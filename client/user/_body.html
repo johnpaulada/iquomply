@@ -1,32 +1,57 @@
 <template name="userBody">
     <section>
         <div class="main-container">
-            <div class="row center-text">
+            <div class="row">
                 <div class="col-lg-6 col-lg-offset-3">
-                    <h2>Awesome List!</h2>
-                    <ul class="list-group">
-                        <li class="list-group-item" data-toggle="collapse" data-target="#survey-container">First item</li>
-                        <li class="list-group-item">Second item</li>
-                        <li class="list-group-item">Third item</li>
-                    </ul>
-                    <div id="survey-container" class="collapse">
+                    <h3>Chapters</h3>
+                    {{#if addedChapters}}
+                        <div class="list-group">
+                            {{#each addedChapters}}
+                                <a href="#" id="chapter-{{@index}}" class="list-group-item added-chapter-item" data-toggle="modal" data-target="#chapter-modal">{{name}}</a>
+                            {{/each}}
+                        </div>
+                    {{else}}
+                        <p>No chapters yet.</p>
+                    {{/if}}
+                    <div class="form-group">
+                        <label for="chapter-select">Select Chapter:</label>
+                        <select class="form-control" id="chapter-select">
+                            {{#each chapters}}
+                                <option value="{{code}}">{{name}}</option>
+                            {{/each}}
+                        </select>
+                        <button id="add-chapter-btn" type="button" class="btn btn-info" name="add-chapter">Add Chapter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Core -->
+        <div class="modal fade" id="chapter-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">{{currentChapter.name}}</h4>
+                    </div>
+                    <div class="modal-body">
                         <div class="card-carousel">
 							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 								<div class="carousel slide" data-ride="carousel">
 
-									<!-- Indicators -->
 									<ol class="carousel-indicators">
-										<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-										<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-										<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                        {{#each questionz}}
+                                            <li data-target="#carousel-example-generic" data-slide-to="{{@index}}"></li>
+                                        {{/each}}
 									</ol>
 
-									<!-- Wrapper for slides -->
 									<div class="carousel-inner">
-                                        {{#each questions}}
+                                        {{#each questionz}}
     										<div class="item">
-                                                <h3 style="text-align: left;">{{@index}}. {{question}}</h3>
-                                                <br>
+                                                <input type="hidden" name="name" value="{{@index}}">
+
+                                                <h3 style="text-align: left;">{{question}}</h3>
+
                                                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
                                                 	<li>
                                                 		<a href="#dashboard" role="tab" data-toggle="tab">
@@ -49,10 +74,10 @@
                                                 </ul>
                                                 <br>
                                                 <div class="form-group">
-                                                    <textarea class="form-control label-floating" placeholder="Evidence of Performance" rows="2"></textarea>
+                                                    <textarea class="form-control label-floating" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
                                                 </div>
                                                 <div class="form-group">
-                                                    <textarea class="form-control label-floating" placeholder="Actions Needed" rows="2"></textarea>
+                                                    <textarea class="form-control label-floating" placeholder="Actions Needed" rows="2" value="{{action}}"></textarea>
                                                 </div>
                                                 <br><br><br>
     										</div>
@@ -61,6 +86,10 @@
 								</div>
 							</div>
 						</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        <button type="button" id="save-btn" class="btn btn-success"><i class="fa fa-floppy-o"></i> Save</button>
                     </div>
                 </div>
             </div>
