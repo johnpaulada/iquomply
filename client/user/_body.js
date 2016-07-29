@@ -84,6 +84,18 @@ Template.userBody.events({
     },
 
     'click #save-btn': function(event, instance) {
+        $('.carousel-inner .item').each((index, element) => {
+            var accomplished = $(element).find('li.active a').attr('class');
+            var evidence     = $(element).find('.evidence').val();
+            var actions      = $(element).find('.actions').val();
 
+            instance.addedChapters.get()[instance.currentChapter.get()].data[index].accomplished = accomplished;
+            instance.addedChapters.get()[instance.currentChapter.get()].data[index].evidence     = evidence;
+            instance.addedChapters.get()[instance.currentChapter.get()].data[index].actions      = actions;
+
+            console.log(instance.addedChapters.get()[instance.currentChapter.get()].data[index]);
+        });
+
+        instance.addedChapters.set(instance.addedChapters.get());
     }
 });

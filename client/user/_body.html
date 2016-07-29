@@ -50,23 +50,23 @@
     										<div class="item">
                                                 <input type="hidden" name="name" value="{{@index}}">
 
-                                                <h3 style="text-align: left;">{{question}}</h3>
+                                                <h3 class="question-text" style="text-align: left;">{{question}}</h3>
 
                                                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
                                                 	<li>
-                                                		<a href="#dashboard" role="tab" data-toggle="tab">
+                                                		<a href="#yes" class="yes" role="tab" data-toggle="tab">
                                                 			<i class="fa fa-check-circle-o"></i>
                                                 			Yes
                                                 		</a>
                                                 	</li>
                                                 	<li class="active">
-                                                		<a href="#schedule" role="tab" data-toggle="tab">
+                                                		<a href="#no" class="no" role="tab" data-toggle="tab">
                                                 			<i class="fa fa-times-circle-o"></i>
                                                 			No
                                                 		</a>
                                                 	</li>
                                                 	<li>
-                                                		<a href="#tasks" role="tab" data-toggle="tab">
+                                                		<a href="#maybe" class="maybe" role="tab" data-toggle="tab">
                                                 			<i class="fa fa-question"></i>
                                                 			Maybe
                                                 		</a>
@@ -74,10 +74,10 @@
                                                 </ul>
                                                 <br>
                                                 <div class="form-group">
-                                                    <textarea class="form-control label-floating" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
+                                                    <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
                                                 </div>
                                                 <div class="form-group">
-                                                    <textarea class="form-control label-floating" placeholder="Actions Needed" rows="2" value="{{action}}"></textarea>
+                                                    <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{action}}"></textarea>
                                                 </div>
                                                 <br><br><br>
     										</div>
