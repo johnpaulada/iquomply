@@ -44,6 +44,19 @@
     padding-top: 15px;
 }
 
+.full-container {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    overflow: auto;
+}
+
+.center-row {
+    margin-top: 20vh;
+}
+
 .card img {
     max-width: 100%;
     max-height: 100%;

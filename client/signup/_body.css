@@ -1,0 +1,16 @@
+#signup-body-container {
+    background-image: url(/images/photo-1446052377488-d40ee7263458-min.jpeg);
+}
+
+.card-signup .header {
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -40px;
+    padding: 20px 0;
+}
+
+.divider-text {
+    margin-top: 25px;
+    margin-bottom: -10px;
+}
