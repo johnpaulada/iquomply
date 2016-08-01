@@ -1,38 +1,65 @@
+Template.signupBody.onRendered(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
 Template.signupBody.events({
     'click #create-user-btn': function(event, instance) {
-        var firstName = $('.first-name-input').val();
-        var lastName  = $('.last-name-input').val();
-        var birthdate = $('.birthdate-input').val();
-        var contact   = $('.contact-input').val();
-        var userLevel = $('.user-level-input').val();
+        var formInput = {
+            'firstName': $('.first-name-input').val(),
+            'lastName': $('.last-name-input').val(),
+            'birthdate': $('.birthdate-input').val(),
+            'contact': $('.contact-input').val(),
+            'userLevel': $('.user-level-input').val()
+        }
 
-        var username  = UsernameGenerator.generate(firstName, lastName, birthdate);
-        var password  = chance.hash({
-            length: 10,
-            casing: 'upper'
-        });
+        var errors = SignupValidator.getErrors(formInput);
 
-        swal("Great Job!", "Username & Password: " + username + " & " + password, "success");
+        if (errors.length == 0) {
+            var username  = UsernameGenerator.generate(formInput.firstName, formInput.lastName, formInput.birthdate);
+            var password  = chance.hash({
+                length: 10,
+                casing: 'upper'
+            });
 
-        Accounts.createUser({
-            "username": username,
-            "password": password,
-            "userLevel": userLevel,
-            "firstName": firstName,
-            "lastName": lastName,
-            "contact": contact,
-            "birthdate": birthdate
-        }, function(error) {
-            if (error) {
-                sweetAlert("Oops...", error.reason, "error");
-            } else {
-                // TODO: Erase input
-                swal({
-                    title: "Great Job!",
-                    text: "<h4>Username</h4><p>" + username + "</p><h4>Password</h4><p>" + password + "</p>",
-                    html: true
-                });
-            }
-        });
+            Accounts.createUser({
+                "username": username,
+                "password": password,
+                "userLevel": formInput.userLevel,
+                "firstName": formInput.firstName,
+                "lastName": formInput.lastName,
+                "contact": formInput.contact,
+                "birthdate": formInput.birthdate,
+            }, function(error) {
+                if (error) {
+                    swal({
+                        title: "Oops...",
+                        text: error.reason,
+                        html: true,
+                        type: "error"
+                    });
+                } else {
+                    // TODO: Erase input
+                    swal({
+                        title: "Great Job!",
+                        text: "<p>Username: <strong>" + username + "</strong></p><p>Password: <strong>" + password + "</strong></p>",
+                        html: true,
+                        type: "success"
+                    });
+                }
+            });
+        } else {
+            var errorList = errors.reduce(
+                function(previousValue, currentValue) {
+                    return previousValue + '<p>' + currentValue + "</p>";
+                },
+            '');
+
+            swal({
+                title: "Oops...",
+                text: errorList,
+                html: true,
+                type: "error"
+            });
+        }
     }
 });
