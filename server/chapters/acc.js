@@ -1,5 +1,5 @@
 (function() {
-    if (Chapters.find().fetch().length == 0) {
+    if (Chapters.find({code: 'acc'}).fetch().length == 0) {
         Chapters.insert({
             name: "Access to Care and Continuity of Care",
             code: "acc",

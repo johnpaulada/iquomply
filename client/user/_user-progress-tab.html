@@ -3,15 +3,16 @@
         <div class="main-container">
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3">
+                    <h2>Current Progress</h2>
                     <h3>Chapters</h3>
-                    {{#if addedChapters}}
+                    {{#if currentProgress}}
                         <div class="list-group">
-                            {{#each addedChapters}}
+                            {{#each currentProgress}}
                                 <a href="#" id="chapter-{{@index}}" class="list-group-item added-chapter-item" data-toggle="modal" data-target="#chapter-modal">{{name}}</a>
                             {{/each}}
                         </div>
                     {{else}}
-                        <p>No chapters yet.</p>
+                        <p>No progress yet.</p>
                     {{/if}}
                     <div class="form-group">
                         <label for="chapter-select">Select Chapter:</label>
@@ -53,19 +54,19 @@
                                                 <h3 class="question-text" style="text-align: left;">{{question}}</h3>
 
                                                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                                                	<li>
+                                                	<li class="{{accomplishedClass accomplished 'Yes'}}">
                                                 		<a href="#yes" class="yes" role="tab" data-toggle="tab">
                                                 			<i class="fa fa-check-circle-o"></i>
                                                 			Yes
                                                 		</a>
                                                 	</li>
-                                                	<li class="active">
+                                                	<li class="{{accomplishedClass accomplished 'No'}}">
                                                 		<a href="#no" class="no" role="tab" data-toggle="tab">
                                                 			<i class="fa fa-times-circle-o"></i>
                                                 			No
                                                 		</a>
                                                 	</li>
-                                                	<li>
+                                                	<li class="">
                                                 		<a href="#maybe" class="maybe" role="tab" data-toggle="tab">
                                                 			<i class="fa fa-question"></i>
                                                 			Maybe

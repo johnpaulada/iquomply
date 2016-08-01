@@ -1,9 +1,11 @@
 Template.userProgressTab.onCreated(function() {
     this.subscribe('forms');
     this.subscribe('chapters');
+    this.subscribe('progress');
 
-    this.addedChapters = new ReactiveVar();
-    this.addedChapters.set([]);
+    this.currentProgress = function() {
+        return Progress.find({userId: Meteor.userId()}).fetch();
+    }
 
     this.currentChapter = new ReactiveVar();
     this.currentChapter.set(null);
@@ -23,59 +25,48 @@ Template.userProgressTab.onRendered(function() {
 });
 
 Template.userProgressTab.helpers({
-    questions: function() {
-        return [
-            {
-                question: "Based on the results of screening, is it determined if the needs of the patient match the hospital's mission and resources?"
-            },
-            {
-                question: "Based on the results of screening, is it determined if the needs of the patient match the hospital's mission and resources?"
-            },
-            {
-                question: "Based on the results of screening, is it determined if the needs of the patient match the hospital's mission and resources?"
-            }
-        ];
-    },
-
     chapters: function() {
         return Template.instance().chapters();
     },
 
-    addedChapters: function() {
-        return Template.instance().addedChapters.get();
+    currentProgress: function() {
+        return Template.instance().currentProgress().length === 0 ? [] : Template.instance().currentProgress()[0].form;
     },
 
     currentChapter: function() {
-        return Template.instance().addedChapters.get()[Template.instance().currentChapter.get()];
+        if (Template.instance().currentProgress().length === 0) {
+            return {};
+        }
+
+        return Template.instance().currentProgress()[0].form[Template.instance().currentChapter.get()];
     },
 
     questionz: function() {
-        if (typeof Template.instance().addedChapters.get()[Template.instance().currentChapter.get()] === 'undefined') {
-            return [{ question: 'Is this real life?' }]
+        if (Template.instance().currentProgress().length === 0 || Template.instance().currentChapter.get() === null) {
+            return [{ question: 'Is this real life?' }];
         }
 
-        return Template.instance().addedChapters.get()[Template.instance().currentChapter.get()].data;
-    }
+        return Template.instance().currentProgress()[0].form[Template.instance().currentChapter.get()].data;
+    },
 
-    // ,
-    //
-    // chapterInList: function(code) {
-    //     var i, chaptersLength = Template.instance().addedChapters.get().length;
-    //
-    //     for (i = 0; i < chaptersLength; i++) {
-    //         if (Template.instance().addedChapters.get()[i].code === code) {
-    //             return Template.instance().addedChapters.get()[i];
-    //         }
-    //     }
-    // }
+    accomplishedClass: function(accomplished, value) {
+        if (accomplished === value) {
+            return 'active';
+        }
+    }
 });
 
 Template.userProgressTab.events({
     'click #add-chapter-btn': function(event, instance) {
         var chapter = instance.chapterByCode($('#chapter-select').val());
 
-        instance.addedChapters.get().push(chapter);
-        instance.addedChapters.set(instance.addedChapters.get());
+        if (instance.currentProgress().length === 0) {
+            Meteor.call('progress.update', [chapter]);
+        } else {
+            var form = instance.currentProgress()[0].form;
+            form.push(chapter);
+            Meteor.call('progress.update', form);
+        }
     },
 
     'click .added-chapter-item': function(event, instance) {
@@ -84,18 +75,23 @@ Template.userProgressTab.events({
     },
 
     'click #save-btn': function(event, instance) {
+        var form = instance.currentProgress()[0].form;
+        var chapter = form[instance.currentChapter.get()];
+
         $('.carousel-inner .item').each((index, element) => {
             var accomplished = $(element).find('li.active a').attr('class');
             var evidence     = $(element).find('.evidence').val();
             var actions      = $(element).find('.actions').val();
 
-            instance.addedChapters.get()[instance.currentChapter.get()].data[index].accomplished = accomplished;
-            instance.addedChapters.get()[instance.currentChapter.get()].data[index].evidence     = evidence;
-            instance.addedChapters.get()[instance.currentChapter.get()].data[index].actions      = actions;
+            chapter.data[index].accomplished = accomplished;
+            chapter.data[index].evidence     = evidence;
+            chapter.data[index].actions      = actions;
 
-            console.log(instance.addedChapters.get()[instance.currentChapter.get()].data[index]);
+            console.log(evidence);
         });
 
-        instance.addedChapters.set(instance.addedChapters.get());
+        form[instance.currentChapter.get()] = chapter;
+
+        Meteor.call('progress.update', form);
     }
 });

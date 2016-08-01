@@ -1,5 +1,5 @@
 (function() {
-    if (Chapters.find().fetch().length == 0) {
+    if (Chapters.find({code: 'asc'}).fetch().length == 0) {
         Chapters.insert({
             name: "Anesthesia and Surgery Care",
             code: "asc",
