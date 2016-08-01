@@ -1,4 +1,4 @@
-Template.userBody.onCreated(function() {
+Template.userProgressTab.onCreated(function() {
     this.subscribe('forms');
     this.subscribe('chapters');
 
@@ -17,12 +17,12 @@ Template.userBody.onCreated(function() {
     }
 });
 
-Template.userBody.onRendered(function() {
+Template.userProgressTab.onRendered(function() {
     $('div.item:first').addClass('active');
     $('ol.carousel-indicators li:first').addClass('active');
 });
 
-Template.userBody.helpers({
+Template.userProgressTab.helpers({
     questions: function() {
         return [
             {
@@ -70,7 +70,7 @@ Template.userBody.helpers({
     // }
 });
 
-Template.userBody.events({
+Template.userProgressTab.events({
     'click #add-chapter-btn': function(event, instance) {
         var chapter = instance.chapterByCode($('#chapter-select').val());
 

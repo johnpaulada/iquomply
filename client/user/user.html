@@ -1,5 +1,11 @@
-<template name="userDashboard">
-    {{> nav}}
-    {{> userHeader}}
-    {{> userBody}}
+<template name="userDashboardLayout">
+    <head>
+        {{> links}}
+        <title>User Dashboard</title>
+    </head>
+    <body>
+        {{> nav}}
+        {{> userHeader}}
+        {{> yield}}
+    </body>
 </template>
