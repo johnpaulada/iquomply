@@ -81,3 +81,8 @@
 .dropdown-menu i.fa {
     margin-right: 10px;
 }
+
+.icon-right {
+    float: right;
+    vertical-align: bottom;
+}

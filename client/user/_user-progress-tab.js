@@ -45,7 +45,7 @@ Template.userProgressTab.helpers({
         if (Template.instance().currentProgress().length === 0 || Template.instance().currentChapter.get() === null) {
             return [{ question: 'Is this real life?' }];
         }
-
+        
         return Template.instance().currentProgress()[0].form[Template.instance().currentChapter.get()].data;
     },
 
@@ -74,6 +74,17 @@ Template.userProgressTab.events({
         instance.currentChapter.set(parseInt($(event.target).attr('id').replace('chapter-', '')));
     },
 
+    'click .added-chapter-item .icon-right': function(event, instance) {
+        var form  = instance.currentProgress()[0].form;
+        var index = parseInt($(event.target).parent().attr('id').replace('chapter-', ''));
+
+        $('.modal').hide();
+
+        form.splice(index, 1);
+
+        Meteor.call('progress.update', form);
+    },
+
     'click #save-btn': function(event, instance) {
         var form = instance.currentProgress()[0].form;
         var chapter = form[instance.currentChapter.get()];
@@ -87,7 +98,10 @@ Template.userProgressTab.events({
             chapter.data[index].evidence     = evidence;
             chapter.data[index].actions      = actions;
 
+            console.log("Index: " + index);
+            console.log(accomplished);
             console.log(evidence);
+            console.log(actions);
         });
 
         form[instance.currentChapter.get()] = chapter;
