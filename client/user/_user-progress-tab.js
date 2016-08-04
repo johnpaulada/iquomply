@@ -45,7 +45,7 @@ Template.userProgressTab.helpers({
         if (Template.instance().currentProgress().length === 0 || Template.instance().currentChapter.get() === null) {
             return [{ question: 'Is this real life?' }];
         }
-        
+
         return Template.instance().currentProgress()[0].form[Template.instance().currentChapter.get()].data;
     },
 
@@ -74,11 +74,9 @@ Template.userProgressTab.events({
         instance.currentChapter.set(parseInt($(event.target).attr('id').replace('chapter-', '')));
     },
 
-    'click .added-chapter-item .icon-right': function(event, instance) {
+    'click button.remove-chapter': function(event, instance) {
         var form  = instance.currentProgress()[0].form;
-        var index = parseInt($(event.target).parent().attr('id').replace('chapter-', ''));
-
-        $('.modal').hide();
+        var index = $(event.target).parent().parent().siblings('td.id-col').html();
 
         form.splice(index, 1);
 

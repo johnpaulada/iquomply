@@ -6,14 +6,37 @@
                     <h2>Current Progress</h2>
                     <h3>Chapters</h3>
                     {{#if currentProgress}}
-                        <div class="list-group">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>Code</th>
+                                <th>Name</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             {{#each currentProgress}}
-                                <a href="#" id="chapter-{{@index}}" class="list-group-item added-chapter-item" data-toggle="modal" data-target="#chapter-modal">{{name}}<span class="fa fa-times icon-right"></span></a>
+                                <tr>
+                                    <td class="id-col text-center">{{@index}}</td>
+                                    <td>{{code}}</td>
+                                    <td>{{name}}</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Chapter" class="btn btn-success btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs remove-chapter">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
                             {{/each}}
-                        </div>
+                        </tbody>
+                    </table>
                     {{else}}
                         <p>No progress yet.</p>
                     {{/if}}
+
                     <div class="form-group">
                         <label for="chapter-select">Select Chapter:</label>
                         <select class="form-control" id="chapter-select">
