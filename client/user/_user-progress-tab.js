@@ -69,9 +69,9 @@ Template.userProgressTab.events({
         }
     },
 
-    'click .added-chapter-item': function(event, instance) {
-        event.preventDefault();
-        instance.currentChapter.set(parseInt($(event.target).attr('id').replace('chapter-', '')));
+    'click button.edit-chapter': function(event, instance) {
+        var index = $(event.target).parent().parent().siblings('td.id-col').html();
+        instance.currentChapter.set(index);
     },
 
     'click button.remove-chapter': function(event, instance) {
