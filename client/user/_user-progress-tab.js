@@ -43,7 +43,7 @@ Template.userProgressTab.helpers({
 
     questionz: function() {
         if (Template.instance().currentProgress().length === 0 || Template.instance().currentChapter.get() === null) {
-            return [{ question: 'Is this real life?' }];
+            return [];
         }
 
         return Template.instance().currentProgress()[0].form[Template.instance().currentChapter.get()].data;
