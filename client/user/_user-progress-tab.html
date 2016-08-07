@@ -51,38 +51,47 @@
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                     {{#each questionz}}
-                        <input type="hidden" name="name" value="{{@index}}">
+                        <div class="item">
+                            <input type="hidden" name="name" value="{{@index}}">
 
-                        <h3 class="question-text" style="text-align: left;">{{question}}</h3>
+                            <h3 class="question-text" style="text-align: left;">{{question}}</h3>
 
-                        <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                            <li class="{{accomplishedClass accomplished 'Yes'}}">
-                                <a href="#yes" class="yes" role="tab" data-toggle="tab">
-                                    <i class="fa fa-check-circle-o"></i>
-                                    Yes
-                                </a>
-                            </li>
-                            <li class="{{accomplishedClass accomplished 'No'}}">
-                                <a href="#no" class="no" role="tab" data-toggle="tab">
-                                    <i class="fa fa-times-circle-o"></i>
-                                    No
-                                </a>
-                            </li>
-                            <li class="">
-                                <a href="#partially" class="partially" role="tab" data-toggle="tab">
-                                    <i class="fa fa-question"></i>
-                                    Partially
-                                </a>
-                            </li>
-                        </ul>
-                        <br>
-                        <div class="form-group">
-                            <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{actions}}"></textarea>
+                            <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                                <li class="{{accomplishedClass accomplished 'Yes'}}">
+                                    <a href="#yes" class="yes" role="tab" data-toggle="tab">
+                                        <i class="fa fa-check-circle-o"></i>
+                                        Yes
+                                    </a>
+                                </li>
+                                <li class="{{accomplishedClass accomplished 'No'}}">
+                                    <a href="#no" class="no" role="tab" data-toggle="tab">
+                                        <i class="fa fa-times-circle-o"></i>
+                                        No
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#partially" class="partially" role="tab" data-toggle="tab">
+                                        <i class="fa fa-question"></i>
+                                        Partially
+                                    </a>
+                                </li>
+                            </ul>
+                            <br>
+                            <div class="form-group">
+                                <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{actions}}"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Person Responsible">
+                            </div>
+                            <div class="form-group label-floating">
+                                <input type="date" class="form-control" placeholder="Date Completed">
+                            </div>
                         </div>
                     {{/each}}
+                    <button id="save-btn" class="btn btn-success">Save</button>
                 </div>
             </div>
         </div>

@@ -50,7 +50,7 @@ Template.userProgressTab.helpers({
     },
 
     accomplishedClass: function(accomplished, value) {
-        if (accomplished === value) {
+        if (accomplished.toLowerCase() === value.toLowerCase()) {
             return 'active';
         }
     }
@@ -87,7 +87,7 @@ Template.userProgressTab.events({
         var form = instance.currentProgress()[0].form;
         var chapter = form[instance.currentChapter.get()];
 
-        $('.carousel-inner .item').each((index, element) => {
+        $('.item').each((index, element) => {
             var accomplished = $(element).find('li.active a').attr('class');
             var evidence     = $(element).find('.evidence').val();
             var actions      = $(element).find('.actions').val();
