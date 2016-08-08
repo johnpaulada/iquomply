@@ -6,33 +6,34 @@
                     <h2>Current Progress</h2>
                     <h3>Chapters</h3>
                     {{#if currentProgress}}
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="text-center">#</th>
-                                <th>Code</th>
-                                <th>Name</th>
-                                <th class="text-right">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {{#each currentProgress}}
+                        <table class="table">
+                            <thead>
                                 <tr>
-                                    <td class="id-col text-center">{{@index}}</td>
-                                    <td>{{code}}</td>
-                                    <td>{{name}}</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Chapter" class="btn btn-success btn-simple btn-xs edit-chapter">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs remove-chapter">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
+                                    <th class="text-center">#</th>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th class="text-right">Actions</th>
                                 </tr>
-                            {{/each}}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {{#each currentProgress}}
+                                    <tr>
+                                        <td class="id-col text-center">{{@index}}</td>
+                                        <td>{{code}}</td>
+                                        <td>{{name}}</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Chapter" class="btn btn-success btn-simple btn-xs edit-chapter">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs remove-chapter">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        <button id="save-btn" class="btn btn-success">Save</button>
                     {{else}}
                         <p>No progress yet.</p>
                     {{/if}}
@@ -56,7 +57,7 @@
 
                             <h3 class="question-text" style="text-align: left;">{{question}}</h3>
 
-                            <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                            <!-- <ul id="choice-{{@index}}" class="nav nav-pills nav-pills-primary" role="tablist">
                                 <li class="{{accomplishedClass accomplished 'Yes'}}">
                                     <a href="#yes" class="yes" role="tab" data-toggle="tab">
                                         <i class="fa fa-check-circle-o"></i>
@@ -69,13 +70,21 @@
                                         No
                                     </a>
                                 </li>
-                                <li class="">
+                                <li class="{{accomplishedClass accomplished 'Partially'}}">
                                     <a href="#partially" class="partially" role="tab" data-toggle="tab">
                                         <i class="fa fa-question"></i>
                                         Partially
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> -->
+
+                            <input type="radio" name="optionsRadios" checked="{{accomplishedClass accomplished 'Yes'}}">
+                        	<label>Yes</label>
+                            <input type="radio" name="optionsRadios" checked="{{accomplishedClass accomplished 'No'}}">
+                        	<label>No</label>
+                            <input type="radio" name="optionsRadios" checked="{{accomplishedClass accomplished 'Partially'}}">
+                        	<label>Partially</label>
+
                             <br>
                             <div class="form-group">
                                 <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
@@ -91,7 +100,6 @@
                             </div>
                         </div>
                     {{/each}}
-                    <button id="save-btn" class="btn btn-success">Save</button>
                 </div>
             </div>
         </div>

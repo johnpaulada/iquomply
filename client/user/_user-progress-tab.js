@@ -51,7 +51,7 @@ Template.userProgressTab.helpers({
 
     accomplishedClass: function(accomplished, value) {
         if (accomplished.toLowerCase() === value.toLowerCase()) {
-            return 'active';
+            return 'checked';
         }
     }
 });
