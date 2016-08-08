@@ -78,11 +78,11 @@
                                 </li>
                             </ul> -->
 
-                            <input type="radio" name="optionsRadios" checked="{{accomplishedClass accomplished 'Yes'}}">
+                            <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Yes'}}" value="Yes">
                         	<label>Yes</label>
-                            <input type="radio" name="optionsRadios" checked="{{accomplishedClass accomplished 'No'}}">
+                            <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'No'}}" value="No">
                         	<label>No</label>
-                            <input type="radio" name="optionsRadios" checked="{{accomplishedClass accomplished 'Partially'}}">
+                            <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Partially'}}" value="Partially">
                         	<label>Partially</label>
 
                             <br>

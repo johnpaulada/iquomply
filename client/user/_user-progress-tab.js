@@ -88,7 +88,7 @@ Template.userProgressTab.events({
         var chapter = form[instance.currentChapter.get()];
 
         $('.item').each((index, element) => {
-            var accomplished = $(element).find('li.active a').attr('class');
+            var accomplished = $(element).find('input[type="radio"]:checked').val();
             var evidence     = $(element).find('.evidence').val();
             var actions      = $(element).find('.actions').val();
 

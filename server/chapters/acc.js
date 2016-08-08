@@ -6,7 +6,7 @@
             data: [
                 {
                     question: "Based on the results of screening, is it determined if the needs of the patient match the hospital's mission and resources?",
-                    accomplished: "NO",
+                    accomplished: "No",
                     evidence: "",
                     actions: "",
                     completionDate: new Date(),
@@ -14,7 +14,7 @@
                 },
                 {
                     question: "Are patients accepted only if the hospital can provide the necessary services and the appropriate outpatient or inpatient setting for care?",
-                    accomplished: "NO",
+                    accomplished: "No",
                     evidence: "",
                     actions: "",
                     completionDate: new Date(),
