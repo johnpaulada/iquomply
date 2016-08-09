@@ -96,10 +96,6 @@ Template.userProgressTab.events({
             chapter.data[index].evidence     = evidence;
             chapter.data[index].actions      = actions;
 
-            console.log("Index: " + index);
-            console.log(accomplished);
-            console.log(evidence);
-            console.log(actions);
         });
 
         form[instance.currentChapter.get()] = chapter;
