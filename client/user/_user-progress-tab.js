@@ -22,6 +22,8 @@ Template.userProgressTab.onCreated(function() {
 Template.userProgressTab.onRendered(function() {
     $('div.item:first').addClass('active');
     $('ol.carousel-indicators li:first').addClass('active');
+
+    // console.log(AnswerCounter.count(Template.instance().currentProgress()[0].form));
 });
 
 Template.userProgressTab.helpers({
@@ -53,6 +55,36 @@ Template.userProgressTab.helpers({
         if (accomplished.toLowerCase() === value.toLowerCase()) {
             return 'checked';
         }
+    },
+
+    chartData: function() {
+        var data = {
+            labels: [
+                "Red",
+                "Blue",
+                "Yellow"
+            ],
+            datasets: [
+                {
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ],
+                    hoverBackgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ]
+                }]
+        };
+
+        return data;
+    },
+
+    chartOptions: function() {
+        return [];
     }
 });
 
@@ -95,7 +127,6 @@ Template.userProgressTab.events({
             chapter.data[index].accomplished = accomplished;
             chapter.data[index].evidence     = evidence;
             chapter.data[index].actions      = actions;
-
         });
 
         form[instance.currentChapter.get()] = chapter;
