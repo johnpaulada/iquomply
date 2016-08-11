@@ -10,6 +10,28 @@ Template.userProgressTab.onCreated(function() {
     this.currentChapter = new ReactiveVar();
     this.currentChapter.set(null);
 
+    this.unitChartData = new ReactiveVar();
+    this.unitChartData.set({
+        labels: [
+            "Yes",
+            "No",
+            "Partially"
+        ],
+        datasets: [{
+            data: [2, 2, 0],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ]
+        }]
+    });
+
     this.chapters = function() {
         return Chapters.find().fetch();
     }
@@ -22,7 +44,6 @@ Template.userProgressTab.onCreated(function() {
 Template.userProgressTab.onRendered(function() {
     $('div.item:first').addClass('active');
     $('ol.carousel-indicators li:first').addClass('active');
-    //
 });
 
 Template.userProgressTab.helpers({
@@ -66,6 +87,10 @@ Template.userProgressTab.helpers({
 
     selectedInvisible: function(selected) {
         return selected ? '' : ' invisible';
+    },
+
+    unitComplianceChartData: function() {
+        return Template.instance().unitChartData.get();
     }
 });
 
@@ -115,6 +140,13 @@ Template.userProgressTab.events({
         form[instance.currentChapter.get()] = chapter;
 
         Meteor.call('progress.update', form, function() {
+            var answers = AnswerCounter.count(instance.currentProgress()[0].form);
+            var unitChartData = instance.unitChartData.get();
+
+            unitChartData.datasets[0].data[0] = answers.yes;
+            unitChartData.datasets[0].data[1] = answers.no;
+            unitChartData.datasets[0].data[2] = answers.partially;
+
             swal('Nice!', 'Successfully saved your progress!', 'success');
         });
     }

@@ -1,19 +1,5 @@
-Template.chart.rendered = function() {
-    var data = [
-    {
-        value: 10,
-        color:"#27AE60",
-        highlight: "#2ECC71",
-        label: "trifft zu"
-    },
-    {
-        value: 10,
-        color: "#16A085",
-        highlight: "#1ABC9C",
-        label: "trifft eher zu"
-    }];
+Template.chart.onRendered(function() {
+    var ctx = this.$('canvas').get(0).getContext('2d');
 
-    Meteor.defer(function() {
-        ChartDrawer.draw('canvas', 'pie', data);
-    });
-};
+    ChartDrawer.draw(ctx, this.data.type, this.data.data);
+});
