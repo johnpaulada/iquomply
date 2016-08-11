@@ -6,6 +6,7 @@
             data: [
                 {
                     question: "Do sedation and anesthesia services meet professional standards and applicable local and national standards, laws, and regulations?",
+                    selected: false,
                     accomplished: "No",
                     evidence: "",
                     actions: "",
@@ -14,6 +15,7 @@
                 },
                 {
                     question: "Are sedation and anesthesia services available to meet patient needs?",
+                    selected: false,
                     accomplished: "No",
                     evidence: "",
                     actions: "",

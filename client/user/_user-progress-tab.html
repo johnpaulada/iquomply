@@ -33,7 +33,6 @@
                                 {{/each}}
                             </tbody>
                         </table>
-                        <button id="save-btn" class="btn btn-success">Save</button>
                     {{else}}
                         <p>No progress yet.</p>
                     {{/if}}
@@ -53,6 +52,10 @@
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                     {{#each questionz}}
                         <div class="item">
+                            <hr>
+
+                            <input name="selected-{{@index}}" class="selector" type="checkbox" {{selectedBox selected}}> Use Item
+
                             <input type="hidden" name="name" value="{{@index}}">
 
                             <h3 class="question-text" style="text-align: left;">{{question}}</h3>
@@ -79,16 +82,14 @@
                             </div>
                         </div>
                     {{/each}}
+                    <button id="save-btn" class="btn btn-success">Save</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                     {{#if Template.subscriptionsReady}}
-                    <h2>Analytics</h2>
-                    <div class="chart">
-                        <canvas id="userComplianceChart" width="400" height="400"></canvas>
-                        <canvas id="unitComplianceChart" width="400" height="400"></canvas>
-                    </div>
+                        <h2>Analytics</h2>
+                            {{> chart}}
                     {{/if}}
                 </div>
             </div>
