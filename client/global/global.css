@@ -86,3 +86,7 @@
     float: right;
     vertical-align: bottom;
 }
+
+.disabled {
+    opacity: 0.2;
+}

@@ -58,6 +58,10 @@ Template.userProgressTab.helpers({
 
     selectedBox: function(selected) {
         return selected ? 'checked' : '';
+    },
+
+    selectedOpacity: function(selected) {
+        return selected ? ' disabled' : '';
     }
 });
 
