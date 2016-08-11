@@ -23,7 +23,6 @@ accounts-facebook
 accounts-twitter
 accounts-google
 iron:router
-chart:chart
 kevohagan:sweetalert
 risul:chance
 fortawesome:fontawesome
