@@ -61,7 +61,11 @@ Template.userProgressTab.helpers({
     },
 
     selectedOpacity: function(selected) {
-        return selected ? ' disabled' : '';
+        return selected ? '' : ' disabled';
+    },
+
+    selectedInvisible: function(selected) {
+        return selected ? '' : ' invisible';
     }
 });
 
@@ -101,8 +105,6 @@ Template.userProgressTab.events({
             var selected     = $(element).find('input.selector').is(':checked');
             var evidence     = $(element).find('.evidence').val();
             var actions      = $(element).find('.actions').val();
-
-            console.log(selected);
 
             chapter.data[index].accomplished = accomplished;
             chapter.data[index].selected     = selected;

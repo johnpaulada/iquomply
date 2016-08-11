@@ -54,31 +54,35 @@
                         <div class="item{{selectedOpacity selected}}">
                             <hr>
 
-                            <input name="selected-{{@index}}" class="selector" type="checkbox" {{selectedBox selected}}> Use Item
+                            <div>
+                                <input name="selected-{{@index}}" class="selector" type="checkbox" {{selectedBox selected}}> Use Item
+                            </div>
 
                             <input type="hidden" name="name" value="{{@index}}">
 
                             <h3 class="question-text" style="text-align: left;">{{question}}</h3>
 
-                            <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Yes'}}" value="Yes">
-                        	<label>Yes</label>
-                            <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'No'}}" value="No">
-                        	<label>No</label>
-                            <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Partially'}}" value="Partially">
-                        	<label>Partially</label>
+                            <div class="answers{{selectedInvisible selected}}">
+                                <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Yes'}}" value="Yes">
+                            	<label>Yes</label>
+                                <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'No'}}" value="No">
+                            	<label>No</label>
+                                <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Partially'}}" value="Partially">
+                            	<label>Partially</label>
 
-                            <br>
-                            <div class="form-group">
-                                <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{actions}}"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Person Responsible">
-                            </div>
-                            <div class="form-group label-floating">
-                                <input type="date" class="form-control" placeholder="Date Completed">
+                                <br>
+                                <div class="form-group">
+                                    <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{actions}}"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Person Responsible">
+                                </div>
+                                <div class="form-group label-floating">
+                                    <input type="date" class="form-control" placeholder="Date Completed">
+                                </div>
                             </div>
                         </div>
                     {{/each}}
