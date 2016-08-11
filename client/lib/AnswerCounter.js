@@ -8,7 +8,9 @@ AnswerCounter = {
 
         form.forEach(function(v1) {
             v1.data.forEach(function(v2) {
-                answers[v2.accomplished.toLowerCase()] = answers[v2.accomplished.toLowerCase()] + 1;
+                if (v2.selected) {
+                    answers[v2.accomplished.toLowerCase()] = answers[v2.accomplished.toLowerCase()] + 1;
+                }
             });
         });
 

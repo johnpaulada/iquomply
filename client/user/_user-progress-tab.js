@@ -22,7 +22,7 @@ Template.userProgressTab.onCreated(function() {
 Template.userProgressTab.onRendered(function() {
     $('div.item:first').addClass('active');
     $('ol.carousel-indicators li:first').addClass('active');
-    // console.log(AnswerCounter.count(Template.instance().currentProgress()[0].form));
+    //
 });
 
 Template.userProgressTab.helpers({
