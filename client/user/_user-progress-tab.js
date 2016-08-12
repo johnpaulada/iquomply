@@ -161,14 +161,17 @@ Template.userProgressTab.events({
         form[instance.currentChapter.get()] = chapter;
 
         Meteor.call('progress.update', form, function() {
-            var answers = AnswerCounter.count(instance.currentProgress()[0].form);
-            var unitChartData = instance.unitChartData.get();
-
-            unitChartData.datasets[0].data[0] = answers.yes;
-            unitChartData.datasets[0].data[1] = answers.no;
-            unitChartData.datasets[0].data[2] = answers.partially;
-
+            updateUnitChartData(instance);
             swal('Nice!', 'Successfully saved your progress!', 'success');
         });
     }
 });
+
+function updateUnitChartData(instance) {
+    var answers = AnswerCounter.count(instance.currentProgress()[0].form);
+    var unitChartData = instance.unitChartData.get();
+
+    unitChartData.datasets[0].data[0] = answers.yes;
+    unitChartData.datasets[0].data[1] = answers.no;
+    unitChartData.datasets[0].data[2] = answers.partially;
+}
