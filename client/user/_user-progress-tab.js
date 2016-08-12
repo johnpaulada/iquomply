@@ -1,23 +1,23 @@
 Template.userProgressTab.onCreated(function() {
     var instance = this;
 
-    this.subscribe('forms');
-    this.subscribe('chapters');
-    var progressSubscription = this.subscribe('progress');
+    instance.subscribe('forms');
+    instance.subscribe('chapters');
+    var progressSubscription = instance.subscribe('progress');
 
-    this.firstRun = {
+    instance.canRun = {
         'unitChart': true
     }
 
-    this.currentProgress = function() {
+    instance.currentProgress = function() {
         return Progress.find({userId: Meteor.userId()}).fetch();
     }
 
-    this.currentChapter = new ReactiveVar();
-    this.currentChapter.set(null);
+    instance.currentChapter = new ReactiveVar();
+    instance.currentChapter.set(null);
 
-    this.unitChartData = new ReactiveVar();
-    this.unitChartData.set({
+    instance.unitChartData = new ReactiveVar();
+    instance.unitChartData.set({
         labels: [
             "Yes",
             "No",
@@ -40,7 +40,7 @@ Template.userProgressTab.onCreated(function() {
 
     this.autorun(function() {
         if (progressSubscription.ready()) {
-            if (instance.firstRun.unitChart) {
+            if (instance.canRun.unitChart) {
                 var answers = AnswerCounter.count(Progress.find({userId: Meteor.userId()}).fetch()[0].form);
                 var unitChartData = instance.unitChartData.get();
 
@@ -48,9 +48,7 @@ Template.userProgressTab.onCreated(function() {
                 unitChartData.datasets[0].data[1] = answers.no;
                 unitChartData.datasets[0].data[2] = answers.partially;
 
-                instance.firstRun.unitChart = false;
-
-                instance.unitChartData.set(unitChartData);
+                instance.canRun.unitChart = false;
             }
         }
     });
