@@ -1,7 +1,13 @@
 Template.userProgressTab.onCreated(function() {
+    var instance = this;
+
     this.subscribe('forms');
     this.subscribe('chapters');
-    this.subscribe('progress');
+    var progressSubscription = this.subscribe('progress');
+
+    this.firstRun = {
+        'unitChart': true
+    }
 
     this.currentProgress = function() {
         return Progress.find({userId: Meteor.userId()}).fetch();
@@ -30,6 +36,23 @@ Template.userProgressTab.onCreated(function() {
                 "#FFCE56"
             ]
         }]
+    });
+
+    this.autorun(function() {
+        if (progressSubscription.ready()) {
+            if (instance.firstRun.unitChart) {
+                var answers = AnswerCounter.count(Progress.find({userId: Meteor.userId()}).fetch()[0].form);
+                var unitChartData = instance.unitChartData.get();
+
+                unitChartData.datasets[0].data[0] = answers.yes;
+                unitChartData.datasets[0].data[1] = answers.no;
+                unitChartData.datasets[0].data[2] = answers.partially;
+
+                instance.firstRun.unitChart = false;
+
+                instance.unitChartData.set(unitChartData);
+            }
+        }
     });
 
     this.chapters = function() {
