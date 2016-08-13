@@ -48,53 +48,59 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                    {{#each questionz}}
-                        <div class="item{{selectedOpacity selected}}">
-                            <hr>
+            {{#if questionz}}
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                        {{#each questionz}}
+                            <div class="item{{selectedOpacity selected}}">
+                                <hr>
 
-                            <div>
-                                <input name="selected-{{@index}}" class="selector" type="checkbox" {{selectedBox selected}}> Use Item
+                                <div>
+                                    <input name="selected-{{@index}}" class="selector" type="checkbox" {{selectedBox selected}}> Use Item
+                                </div>
+
+                                <input type="hidden" name="name" value="{{@index}}">
+
+                                <h3 class="question-text" style="text-align: left;">{{question}}</h3>
+
+                                <div class="answers{{selectedInvisible selected}}">
+                                    <input type="radio" class="accomplished" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Yes'}}" value="Yes">
+                                	<label>Yes</label>
+                                    <input type="radio" class="accomplished" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'No'}}" value="No">
+                                	<label>No</label>
+                                    <input type="radio" class="accomplished" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Partially'}}" value="Partially">
+                                	<label>Partially</label>
+
+                                    <br>
+                                    <div class="form-group">
+                                        <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{actions}}"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Person Responsible">
+                                    </div>
+                                    <div class="form-group label-floating">
+                                        <input type="date" class="form-control" placeholder="Date Completed">
+                                    </div>
+                                </div>
                             </div>
-
-                            <input type="hidden" name="name" value="{{@index}}">
-
-                            <h3 class="question-text" style="text-align: left;">{{question}}</h3>
-
-                            <div class="answers{{selectedInvisible selected}}">
-                                <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Yes'}}" value="Yes">
-                            	<label>Yes</label>
-                                <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'No'}}" value="No">
-                            	<label>No</label>
-                                <input type="radio" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Partially'}}" value="Partially">
-                            	<label>Partially</label>
-
-                                <br>
-                                <div class="form-group">
-                                    <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{actions}}"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Person Responsible">
-                                </div>
-                                <div class="form-group label-floating">
-                                    <input type="date" class="form-control" placeholder="Date Completed">
-                                </div>
-                            </div>
-                        </div>
-                    {{/each}}
-                    <button id="save-btn" class="btn btn-success">Save</button>
+                        {{/each}}
+                        <button id="save-btn" class="btn btn-success">Save</button>
+                    </div>
                 </div>
-            </div>
+            {{/if}}
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                     {{#if Template.subscriptionsReady}}
                         <h2>Analytics</h2>
                         <h3>Unit Compliance Statistics</h3>
                         {{> chart type="pie" data=unitComplianceChartData}}
+                        <h4>Percentage</h4>
+                        <p>
+                            {{ unitCompliancePercentage }}
+                        </p>
                     {{/if}}
                 </div>
             </div>

@@ -1,13 +1,9 @@
 Template.userProgressTab.onCreated(function() {
     var instance = this;
 
-    instance.subscribe('forms');
-    instance.subscribe('chapters');
+    var formsSubscription    = instance.subscribe('forms');
+    var chaptersSubscription = instance.subscribe('chapters');
     var progressSubscription = instance.subscribe('progress');
-
-    instance.canRun = {
-        'unitChart': true
-    }
 
     instance.currentProgress = function() {
         return Progress.find({userId: Meteor.userId()}).fetch();
@@ -17,39 +13,21 @@ Template.userProgressTab.onCreated(function() {
     instance.currentChapter.set(null);
 
     instance.unitChartData = new ReactiveVar();
-    instance.unitChartData.set({
-        labels: [
-            "Yes",
-            "No",
-            "Partially"
-        ],
-        datasets: [{
-            data: [2, 2, 0],
-            backgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-            ],
-            hoverBackgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-            ]
-        }]
-    });
+    instance.unitChartData.set(UnitChartDataGenerator.generate());
 
     this.autorun(function() {
         if (progressSubscription.ready()) {
-            if (instance.canRun.unitChart) {
-                var answers = AnswerCounter.count(Progress.find({userId: Meteor.userId()}).fetch()[0].form);
-                var unitChartData = instance.unitChartData.get();
+            updateUnitChartData(instance);
+        }
+    });
 
-                unitChartData.datasets[0].data[0] = answers.yes;
-                unitChartData.datasets[0].data[1] = answers.no;
-                unitChartData.datasets[0].data[2] = answers.partially;
+    instance.unitComplianceStats = new ReactiveVar();
+    this.autorun(function() {
+        var progress = Progress.find({userId: Meteor.userId()}).fetch();
 
-                instance.canRun.unitChart = false;
-            }
+        if (progress.length > 0) {
+            instance.unitComplianceStats.set(AnswerCounter.count(progress[0].form));
+            updateUnitChartData(instance);
         }
     });
 
@@ -85,11 +63,14 @@ Template.userProgressTab.helpers({
     },
 
     questionz: function() {
-        if (Template.instance().currentProgress().length === 0 || Template.instance().currentChapter.get() === null) {
-            return [];
+        var progress = Progress.find({userId: Meteor.userId()}).fetch();
+        var chapter  = Template.instance().currentChapter.get();
+
+        if (progress.length > 0) {
+            return progress[0].form[chapter].data;
         }
 
-        return Template.instance().currentProgress()[0].form[Template.instance().currentChapter.get()].data;
+        return [];
     },
 
     accomplishedClass: function(accomplished, value) {
@@ -112,6 +93,12 @@ Template.userProgressTab.helpers({
 
     unitComplianceChartData: function() {
         return Template.instance().unitChartData.get();
+    },
+
+    unitCompliancePercentage: function() {
+        var stats = Template.instance().unitComplianceStats.get();
+
+        return stats.yes / stats.total * 100 + '%';
     }
 });
 
@@ -143,35 +130,51 @@ Template.userProgressTab.events({
     },
 
     'click #save-btn': function(event, instance) {
-        var form = instance.currentProgress()[0].form;
-        var chapter = form[instance.currentChapter.get()];
+        saveChapter(instance);
+        swal('Nice!', 'Successfully saved your progress!', 'success');
+    },
 
-        $('.item').each((index, element) => {
-            var accomplished = $(element).find('input[type="radio"]:checked').val();
-            var selected     = $(element).find('input.selector').is(':checked');
-            var evidence     = $(element).find('.evidence').val();
-            var actions      = $(element).find('.actions').val();
+    'change input.selector': function(event, instance) {
+        saveChapter(instance);
+    },
 
-            chapter.data[index].accomplished = accomplished;
-            chapter.data[index].selected     = selected;
-            chapter.data[index].evidence     = evidence;
-            chapter.data[index].actions      = actions;
-        });
-
-        form[instance.currentChapter.get()] = chapter;
-
-        Meteor.call('progress.update', form, function() {
-            updateUnitChartData(instance);
-            swal('Nice!', 'Successfully saved your progress!', 'success');
-        });
+    'change input.accomplished': function(event, instance) {
+        saveChapter(instance);
+        swal('Nice!', 'Successfully saved your progress!', 'success');
     }
 });
 
-function updateUnitChartData(instance) {
-    var answers = AnswerCounter.count(instance.currentProgress()[0].form);
-    var unitChartData = instance.unitChartData.get();
+function saveChapter(instance) {
+    var form = Progress.find({userId: Meteor.userId()}).fetch()[0].form;
+    var chapter = form[instance.currentChapter.get()];
 
-    unitChartData.datasets[0].data[0] = answers.yes;
-    unitChartData.datasets[0].data[1] = answers.no;
-    unitChartData.datasets[0].data[2] = answers.partially;
+    $('.item').each((index, element) => {
+        var accomplished = $(element).find('input[type="radio"]:checked').val();
+        var selected     = $(element).find('input.selector').is(':checked');
+        var evidence     = $(element).find('.evidence').val();
+        var actions      = $(element).find('.actions').val();
+
+        chapter.data[index].accomplished = accomplished;
+        chapter.data[index].selected     = selected;
+        chapter.data[index].evidence     = evidence;
+        chapter.data[index].actions      = actions;
+    });
+
+    form[instance.currentChapter.get()] = chapter;
+
+    Meteor.call('progress.update', form, function() {
+    });
+}
+
+function updateUnitChartData(instance) {
+    var progress = Progress.find({userId: Meteor.userId()}).fetch();
+
+    if (progress.length > 0) {
+        var answers = AnswerCounter.count(progress[0].form);
+        var unitChartData = instance.unitChartData.get();
+
+        unitChartData.datasets[0].data[0] = answers.yes;
+        unitChartData.datasets[0].data[1] = answers.no;
+        unitChartData.datasets[0].data[2] = answers.partially;
+    }
 }
