@@ -99,6 +99,12 @@ Template.userProgressTab.helpers({
         var stats = Template.instance().unitComplianceStats.get();
 
         return stats.yes / stats.total * 100 + '%';
+    },
+
+    unitVerbalCompliance: function() {
+        var stats = Template.instance().unitComplianceStats.get();
+
+        return ComplianceVerbalProgressGenerator.generate(stats.yes / stats.total * 100);
     }
 });
 
@@ -117,7 +123,12 @@ Template.userProgressTab.events({
 
     'click button.edit-chapter': function(event, instance) {
         var index = $(event.target).parent().parent().siblings('td.id-col').html();
-        instance.currentChapter.set(index);
+
+        if (instance.currentChapter.get() == null) {
+            instance.currentChapter.set(index);
+        } else {
+            instance.currentChapter.set(null);
+        }
     },
 
     'click button.remove-chapter': function(event, instance) {
@@ -162,8 +173,7 @@ function saveChapter(instance) {
 
     form[instance.currentChapter.get()] = chapter;
 
-    Meteor.call('progress.update', form, function() {
-    });
+    Meteor.call('progress.update', form);
 }
 
 function updateUnitChartData(instance) {

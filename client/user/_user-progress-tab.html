@@ -97,10 +97,7 @@
                         <h2>Analytics</h2>
                         <h3>Unit Compliance Statistics</h3>
                         {{> chart type="pie" data=unitComplianceChartData}}
-                        <h4>Percentage</h4>
-                        <p>
-                            {{ unitCompliancePercentage }}
-                        </p>
+                        <h4 class="center-text">Complied {{ unitCompliancePercentage }} of applicable standards. ({{ unitVerbalCompliance }})</h4>
                     {{/if}}
                 </div>
             </div>
