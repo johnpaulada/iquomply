@@ -1,9 +1,18 @@
 Template.userProgressTab.onCreated(function() {
     var instance = this;
 
-    var formsSubscription    = instance.subscribe('forms');
-    var chaptersSubscription = instance.subscribe('chapters');
-    var progressSubscription = instance.subscribe('progress');
+    instance.cacheBuster = new ReactiveVar();
+    instance.cacheBuster.set(new Date());
+
+    var formsSubscription    = null;
+    var chaptersSubscription = null;
+    var progressSubscription = null;
+
+    instance.autorun(function() {
+        formsSubscription    = instance.subscribe('forms', instance.cacheBuster.get());
+        chaptersSubscription = instance.subscribe('chapters', instance.cacheBuster.get());
+        progressSubscription = instance.subscribe('progress', instance.cacheBuster.get());
+    });
 
     instance.currentProgress = function() {
         return Progress.find({userId: Meteor.userId()}).fetch();
@@ -14,6 +23,9 @@ Template.userProgressTab.onCreated(function() {
 
     instance.unitChartData = new ReactiveVar();
     instance.unitChartData.set(UnitChartDataGenerator.generate());
+
+
+
 
     this.autorun(function() {
         if (progressSubscription.ready()) {
@@ -77,6 +89,14 @@ Template.userProgressTab.helpers({
         if (accomplished.toLowerCase() === value.toLowerCase()) {
             return 'checked';
         }
+    },
+
+    equalString: function(actual, expected) {
+        return actual.toLowerCase() === expected.toLowerCase();
+    },
+
+    or: function(cond1, cond2) {
+        return cond1 || cond2;
     },
 
     selectedBox: function(selected) {
@@ -173,7 +193,9 @@ function saveChapter(instance) {
 
     form[instance.currentChapter.get()] = chapter;
 
-    Meteor.call('progress.update', form);
+    Meteor.call('progress.update', form, function() {
+        instance.cacheBuster.set(new Date());
+    });
 }
 
 function updateUnitChartData(instance) {

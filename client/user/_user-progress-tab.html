@@ -72,12 +72,18 @@
                                 	<label>Partially</label>
 
                                     <br>
-                                    <div class="form-group">
-                                        <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{actions}}"></textarea>
-                                    </div>
+                                    {{#if (equalString accomplished 'Yes')}}
+                                        <div class="form-group">
+                                            <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
+                                        </div>
+                                    {{/if}}
+
+                                    {{#if (or (equalString accomplished 'No') (equalString accomplished 'Partially'))}}
+                                        <div class="form-group">
+                                            <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{actions}}"></textarea>
+                                        </div>
+                                    {{/if}}
+
                                     <div class="form-group">
                                         <input type="email" class="form-control" placeholder="Person Responsible">
                                     </div>
