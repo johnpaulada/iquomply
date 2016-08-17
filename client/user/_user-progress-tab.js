@@ -165,6 +165,18 @@ Template.userProgressTab.events({
         swal('Nice!', 'Successfully saved your progress!', 'success');
     },
 
+    'click #submit-btn': function(event, instance) {
+        var form = Progress.find({userId: Meteor.userId()}).fetch()[0].form;
+
+        Meteor.call('progress.submit', form, function() {
+            instance.cacheBuster.set(new Date());
+            
+            swal('Nice!', 'Successfully submitted a report!', 'success');
+        });
+
+
+    },
+
     'change input.selector': function(event, instance) {
         saveChapter(instance);
     },
