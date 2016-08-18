@@ -5,15 +5,18 @@
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                     <h2>Reports</h2>
                     {{#each reports}}
-                        <small>Report by: {{userId}} at {{dateSubmitted}}</small>
+                        <hr>
                         <h3>Chapters</h3>
                         {{#each progress}}
                             <h4><strong>{{name}}</strong></h4>
                             {{#each data}}
-                                <h5>{{question}} -- <strong>{{accomplished}}</strong></h5>
+                                <h4>Item: {{question}} -- <strong>{{accomplished}}</strong></h4>
+                                <h5>{{actionsHeader}}</h5>
+                                <p><em>{{actionsText}}</em></p>
                             {{/each}}
                         {{/each}}
                         <hr>
+                        <small>Report by: {{user.profile.firstName}} at {{dateSubmitted}}</small>
                     {{/each}}
                 </div>
             </div>

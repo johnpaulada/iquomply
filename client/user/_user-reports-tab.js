@@ -13,11 +13,29 @@ Template.userReportsTab.onCreated(function() {
         chaptersSubscription = instance.subscribe('chapters', instance.cacheBuster.get());
         progressSubscription = instance.subscribe('progress', instance.cacheBuster.get());
     });
+
+    instance.reports = function() {
+        return Reports.find({userId: Meteor.userId()}).fetch();
+    }
 });
 
 Template.userReportsTab.helpers({
     reports: function() {
-        console.log(Reports.find({userId: Meteor.userId()}).fetch());
-        return Reports.find({userId: Meteor.userId()}).fetch();
+        return Template.instance().reports();
+    },
+
+    user: function() {
+        return Meteor.users.find({'_id': this.userId}).fetch()[0];
+    },
+
+    actionsHeader: function() {
+        return this.accomplished === 'Yes' ? 'Evidence' : 'Actions Needed';
+    },
+
+    actionsText: function() {
+        var evidence = this.evidence || 'No evidence provided.';
+        var actions  = this.actions  || 'No actions to be performed were specified.';
+
+        return this.accomplished === 'Yes' ? evidence : actions;
     }
 });
