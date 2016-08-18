@@ -21,25 +21,6 @@ Template.userProgressTab.onCreated(function() {
     instance.currentChapter = new ReactiveVar();
     instance.currentChapter.set(null);
 
-    instance.unitChartData = new ReactiveVar();
-    instance.unitChartData.set(UnitChartDataGenerator.generate());
-
-    this.autorun(function() {
-        if (progressSubscription.ready()) {
-            updateUnitChartData(instance);
-        }
-    });
-
-    instance.unitComplianceStats = new ReactiveVar();
-    this.autorun(function() {
-        var progress = Progress.find({userId: Meteor.userId()}).fetch();
-
-        if (progress.length > 0) {
-            instance.unitComplianceStats.set(AnswerCounter.count(progress[0].form));
-            updateUnitChartData(instance);
-        }
-    });
-
     this.chapters = function() {
         return Chapters.find().fetch();
     }
@@ -108,22 +89,6 @@ Template.userProgressTab.helpers({
 
     selectedInvisible: function(selected) {
         return selected ? '' : ' invisible';
-    },
-
-    unitComplianceChartData: function() {
-        return Template.instance().unitChartData.get();
-    },
-
-    unitCompliancePercentage: function() {
-        var stats = Template.instance().unitComplianceStats.get();
-
-        return stats.yes / stats.total * 100 + '%';
-    },
-
-    unitVerbalCompliance: function() {
-        var stats = Template.instance().unitComplianceStats.get();
-
-        return ComplianceVerbalProgressGenerator.generate(stats.yes / stats.total * 100);
     }
 });
 
@@ -169,11 +134,8 @@ Template.userProgressTab.events({
 
         Meteor.call('progress.submit', form, function() {
             instance.cacheBuster.set(new Date());
-
             swal('Nice!', 'Successfully submitted a report!', 'success');
         });
-
-
     },
 
     'change input.selector': function(event, instance) {
@@ -207,17 +169,4 @@ function saveChapter(instance) {
     Meteor.call('progress.update', form, function() {
         instance.cacheBuster.set(new Date());
     });
-}
-
-function updateUnitChartData(instance) {
-    var progress = Progress.find({userId: Meteor.userId()}).fetch();
-
-    if (progress.length > 0) {
-        var answers = AnswerCounter.count(progress[0].form);
-        var unitChartData = instance.unitChartData.get();
-
-        unitChartData.datasets[0].data[0] = answers.yes;
-        unitChartData.datasets[0].data[1] = answers.no;
-        unitChartData.datasets[0].data[2] = answers.partially;
-    }
 }

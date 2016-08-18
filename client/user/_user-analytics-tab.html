@@ -1,0 +1,16 @@
+<template name="userAnalyticsTab">
+    <section>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                    <h2>MyPerformance</h2>
+                    {{#if Template.subscriptionsReady}}
+                        <h3>Unit Compliance Statistics</h3>
+                        {{> chart type="pie" data=unitComplianceChartData}}
+                        <h4 class="center-text">Complied {{ unitCompliancePercentage }} of applicable standards. ({{ unitVerbalCompliance }})</h4>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
