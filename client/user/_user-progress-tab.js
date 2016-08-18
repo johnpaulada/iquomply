@@ -4,12 +4,12 @@ Template.userProgressTab.onCreated(function() {
     instance.cacheBuster = new ReactiveVar();
     instance.cacheBuster.set(new Date());
 
-    var formsSubscription    = null;
+    var reportsSubscription  = null;
     var chaptersSubscription = null;
     var progressSubscription = null;
 
     instance.autorun(function() {
-        formsSubscription    = instance.subscribe('forms', instance.cacheBuster.get());
+        formsSubscription    = instance.subscribe('reports', instance.cacheBuster.get());
         chaptersSubscription = instance.subscribe('chapters', instance.cacheBuster.get());
         progressSubscription = instance.subscribe('progress', instance.cacheBuster.get());
     });
@@ -23,9 +23,6 @@ Template.userProgressTab.onCreated(function() {
 
     instance.unitChartData = new ReactiveVar();
     instance.unitChartData.set(UnitChartDataGenerator.generate());
-
-
-
 
     this.autorun(function() {
         if (progressSubscription.ready()) {
@@ -63,6 +60,8 @@ Template.userProgressTab.helpers({
     },
 
     currentProgress: function() {
+        console.log(Template.instance().currentProgress());
+
         return Template.instance().currentProgress().length === 0 ? [] : Template.instance().currentProgress()[0].form;
     },
 
@@ -170,7 +169,7 @@ Template.userProgressTab.events({
 
         Meteor.call('progress.submit', form, function() {
             instance.cacheBuster.set(new Date());
-            
+
             swal('Nice!', 'Successfully submitted a report!', 'success');
         });
 
