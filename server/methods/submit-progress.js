@@ -10,6 +10,6 @@ Meteor.methods({
             'dateSubmitted': new Date()
         });
 
-        Progress.remove(progress._id);
+        Progress.remove(progress[0]._id);
     }
 });
