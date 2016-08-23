@@ -52,7 +52,7 @@ Template.signupBody.events({
                         type: "success"
                     });
 
-                    Router.go('/admin');
+                    Router.go('/admin-dashboard');
                 }
             });
         } else {
