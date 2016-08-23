@@ -14,7 +14,11 @@ Template.loginBody.events({
                     type: "error"
                 });
             } else {
-                Router.go('/user-dashboard');
+                if (Roles.userIsInRole(Meteor.userId(), ['admin', 'super-admin'], 'iquomply')) {
+                    Router.go('/admin-dashboard');
+                } else {
+                    Router.go('/user-dashboard');
+                }
             }
         });
     }

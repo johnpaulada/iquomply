@@ -1,0 +1,16 @@
+<template name="adminDashboardLayout">
+    <head>
+        {{> links}}
+        <title>Admin Dashboard</title>
+    </head>
+    <body>
+        <div class="super-main-container">
+            {{> adminDashboardAside}}
+            <div class="content-container">
+                {{> nav}}
+                {{> adminHeader}}
+                {{> yield}}
+            </div>
+        </div>
+    </body>
+</template>

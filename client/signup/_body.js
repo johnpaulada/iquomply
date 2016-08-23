@@ -24,11 +24,12 @@ Template.signupBody.events({
             Accounts.createUser({
                 "username": username,
                 "password": password,
-                "userLevel": formInput.userLevel,
-                "firstName": formInput.firstName,
-                "lastName": formInput.lastName,
-                "contact": formInput.contact,
-                "birthdate": formInput.birthdate,
+                "profile": {
+                    "firstName": formInput.firstName,
+                    "lastName": formInput.lastName,
+                    "contact": formInput.contact,
+                    "birthdate": formInput.birthdate
+                }
             }, function(error) {
                 if (error) {
                     swal({
@@ -39,12 +40,19 @@ Template.signupBody.events({
                     });
                 } else {
                     // TODO: Erase input
+
+                    // Assign role
+                    var createdUser = Meteor.users.find({'username': username}).fetch()[0]._id;
+                    Roles.addUsersToRoles(createdUser, formInput.userLevel, 'iquomply');
+
                     swal({
                         title: "Great Job!",
                         text: "<p>Username: <strong>" + username + "</strong></p><p>Password: <strong>" + password + "</strong></p>",
                         html: true,
                         type: "success"
                     });
+
+                    Router.go('/admin');
                 }
             });
         } else {
