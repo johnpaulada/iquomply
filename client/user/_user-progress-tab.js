@@ -43,6 +43,9 @@ Template.userProgressTab.helpers({
     currentProgress: function() {
         console.log(Template.instance().currentProgress());
 
+        console.log('wjhat');
+        console.log(Template.instance().currentProgress().length === 0 ? [] : Template.instance().currentProgress()[0].form);
+
         return Template.instance().currentProgress().length === 0 ? [] : Template.instance().currentProgress()[0].form;
     },
 
@@ -93,6 +96,10 @@ Template.userProgressTab.helpers({
 });
 
 Template.userProgressTab.events({
+    'click #start-progress-btn': function(event, instance) {
+        Meteor.call('progress.update', Meteor.users.find({'_id': Meteor.userId()}).fetch()[0].profile.chapters);
+    },
+
     'click #add-chapter-btn': function(event, instance) {
         var chapter = instance.chapterByCode($('#chapter-select').val());
 

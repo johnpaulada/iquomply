@@ -22,7 +22,8 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 }
-            ]
+            ],
+            selected: false
         });
     }
 })();

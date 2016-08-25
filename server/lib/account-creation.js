@@ -15,6 +15,7 @@ Accounts.onCreateUser(function(options, user) {
    user.profile.lastName  = options.profile.lastName;
    user.profile.contact   = options.profile.contact;
    user.profile.birthdate = options.profile.birthdate;
+   user.profile.chapters  = Chapters.find().fetch();
 
    user.roles = options.roles;
 

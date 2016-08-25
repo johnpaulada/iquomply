@@ -7,7 +7,8 @@
                 "firstName": 'iQuomply',
                 "lastName": 'Admin',
                 "contact": '09358369332',
-                "birthdate": '1994-10-07'
+                "birthdate": '1994-10-07',
+                "chapters": Chapters.find().fetch()
             },
             "roles": ['super-admin']
         });
