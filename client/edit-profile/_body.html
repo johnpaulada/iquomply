@@ -1,0 +1,73 @@
+<template name="editProfileBody">
+    <section>
+        <div id="signup-body-container" class="full-container">
+            <div class="container">
+                <div class="row center-row">
+                    <div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-12">
+                        <div class="card card-form">
+                            <form class="form" action="index.html" method="post" role="">
+                                <div class="header header-info center-text">
+                                    <h4>Edit Account</h4>
+                                </div>
+                                {{#if Template.subscriptionsReady}}
+                                    {{#with user}}
+                                        <div class="content">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-user"></i>
+                                                </span>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control first-name-input" placeholder="{{firstName}}" value="{{firstName}}">
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-user"></i>
+                                                </span>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control last-name-input" placeholder="{{lastName}}" value="{{lastName}}">
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-date"></i>
+                                                </span>
+                                                <div class="form-group">
+                                                    <label class="control-label">Birthdate</label>
+                                                    <input type="date" class="form-control birthdate-input" placeholder="{{birthdate}}" value="{{birthdate}}">
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-phone"></i>
+                                                </span>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control contact-input" placeholder="{{contact}}" data-toggle="tooltip" data-placement="right" title="Contact Number must be of the form 09xxxxxxxxx or +639xxxxxxxxx" value="{{contact}}">
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-user-secret"></i>
+                                                </span>
+                                                <div class="form-group">
+                                                    <label class="control-label" for="unit-input">Unit:</label>
+                                                    <select class="form-control uis" id="unit-input">
+                                                        <option value="test1">Test1</option>
+                                                        <option value="test2">Test2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/with}}
+                                {{/if}}
+                                <div class="footer center-text">
+                                    <a href="#" id="edit-user-btn" class="btn btn-simple btn-info btn-lg">Change it!</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
