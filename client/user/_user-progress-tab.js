@@ -41,11 +41,6 @@ Template.userProgressTab.helpers({
     },
 
     currentProgress: function() {
-        console.log(Template.instance().currentProgress());
-
-        console.log('wjhat');
-        console.log(Template.instance().currentProgress().length === 0 ? [] : Template.instance().currentProgress()[0].form);
-
         return Template.instance().currentProgress().length === 0 ? [] : Template.instance().currentProgress()[0].form;
     },
 

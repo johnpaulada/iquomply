@@ -1,10 +1,16 @@
 Template.chapterSelector.onCreated(function() {
     var instance = this;
 
+    instance.subscribe('progress');
+
     instance.chapters = function() {
         var user = Meteor.users.find({'_id': Meteor.userId()}).fetch();
 
         return user.length > 0 ? user[0].profile.chapters : [];
+    }
+
+    instance.progress = function() {
+        return Progress.find({'userId': Meteor.userId()}).fetch();
     }
 });
 
@@ -35,6 +41,7 @@ Template.chapterSelector.events({
             }
         });
     },
+
     'change input.question'(event, instance) {
         var chapterIndex = parseInt(event.target.parentElement.parentElement.previousElementSibling.children[0].name.replace('chapter-', ''));
         var index        = parseInt(event.target.name.replace('question-', ''));
@@ -47,5 +54,30 @@ Template.chapterSelector.events({
                 swal('Ouch!', error.message, 'error');
             }
         });
+    },
+
+    'click #save-btn'(event, instance) {
+        var progress = instance.progress();
+
+        if (progress.length > 0) {
+            var chapters = instance.chapters();
+
+            chapters.forEach(function(chapter, chapterIndex) {
+                progress[0].form[chapterIndex].selected = chapter.selected;
+                chapter.data.forEach(function(question, questionIndex) {
+                    progress[0].form[chapterIndex].data[questionIndex].selected = question.selected;
+                });
+            });
+
+            Meteor.call('progress.update', progress[0].form, function(error) {
+                if (error) {
+                    swal('Ouch!', error.message, 'error');
+                } else {
+                    swal('Nice Job!', "Updated successfully!", 'success');
+                }
+            });
+        } else {
+            swal('Nice Job!', "Updated successfully!", 'success');
+        }
     }
 });
