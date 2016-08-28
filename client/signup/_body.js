@@ -9,7 +9,8 @@ Template.signupBody.events({
             'lastName': $('.last-name-input').val(),
             'birthdate': $('.birthdate-input').val(),
             'contact': $('.contact-input').val(),
-            'userLevel': $('.user-level-input').val()
+            'userLevel': $('.user-type-input').val(),
+            'unit': $('.unit-input').val()
         }
 
         var errors = SignupValidator.getErrors(formInput);
@@ -28,8 +29,11 @@ Template.signupBody.events({
                     "firstName": formInput.firstName,
                     "lastName": formInput.lastName,
                     "contact": formInput.contact,
-                    "birthdate": formInput.birthdate
-                }
+                    "birthdate": formInput.birthdate,
+                    "unit": formInput.unit,
+                    "newUser": true
+                },
+                "roles": formInput.userLevel === 'admin' ? ['admin', 'user'] : ['user']
             }, function(error) {
                 if (error) {
                     swal({
@@ -41,18 +45,16 @@ Template.signupBody.events({
                 } else {
                     // TODO: Erase input
 
-                    // Assign role
-                    var createdUser = Meteor.users.find({'username': username}).fetch()[0]._id;
-                    Roles.addUsersToRoles(createdUser, formInput.userLevel, 'iquomply');
-
                     swal({
                         title: "Great Job!",
                         text: "<p>Username: <strong>" + username + "</strong></p><p>Password: <strong>" + password + "</strong></p>",
                         html: true,
-                        type: "success"
+                        type: "success",
+                        confirmButtonText: "Okay, proceed!",
+                        closeOnConfirm: true
+                    }, function() {
+                        Router.go('/change-password');
                     });
-
-                    Router.go('/admin-dashboard');
                 }
             });
         } else {

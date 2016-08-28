@@ -6,14 +6,14 @@ UserChartDataGenerator = {
                 "Incomplete",
             ],
             datasets: [{
-                data: [1, 1, 1],
+                data: [1, 1],
                 backgroundColor: [
-                    "#FF6384",
-                    "#36A2EB"
+                    "#27ae60",
+                    "#bdc3c7"
                 ],
                 hoverBackgroundColor: [
-                    "#FF6384",
-                    "#36A2EB"
+                    "#2ecc71",
+                    "#ecf0f1"
                 ]
             }]
         };

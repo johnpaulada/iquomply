@@ -8,6 +8,8 @@
                 "lastName": 'Admin',
                 "contact": '09358369332',
                 "birthdate": '1994-10-07',
+                "unit": '',
+                "newUser": false,
                 "chapters": Chapters.find().fetch()
             },
             "roles": ['super-admin']

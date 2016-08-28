@@ -56,7 +56,7 @@ Template.userProgressTab.helpers({
         var progress = Progress.find({userId: Meteor.userId()}).fetch();
         var chapter  = Template.instance().currentChapter.get();
 
-        if (progress.length > 0) {
+        if (progress.length > 0 && chapter) {
             return progress[0].form[chapter].data;
         }
 
@@ -110,11 +110,7 @@ Template.userProgressTab.events({
     'click button.edit-chapter': function(event, instance) {
         var index = $(event.target).parent().parent().siblings('td.id-col').html();
 
-        if (instance.currentChapter.get() == null) {
-            instance.currentChapter.set(index);
-        } else {
-            instance.currentChapter.set(null);
-        }
+        instance.currentChapter.set( instance.currentChapter.get() ? null : index );
     },
 
     'click button.remove-chapter': function(event, instance) {
@@ -138,15 +134,6 @@ Template.userProgressTab.events({
             instance.cacheBuster.set(new Date());
             swal('Nice!', 'Successfully submitted a report!', 'success');
         });
-    },
-
-    'change input.selector': function(event, instance) {
-        saveChapter(instance);
-    },
-
-    'change input.accomplished': function(event, instance) {
-        saveChapter(instance);
-        swal('Nice!', 'Successfully saved your progress!', 'success');
     }
 });
 
@@ -156,12 +143,10 @@ function saveChapter(instance) {
 
     $('.item').each((index, element) => {
         var accomplished = $(element).find('input[type="radio"]:checked').val();
-        var selected     = $(element).find('input.selector').is(':checked');
         var evidence     = $(element).find('.evidence').val();
         var actions      = $(element).find('.actions').val();
 
         chapter.data[index].accomplished = accomplished;
-        chapter.data[index].selected     = selected;
         chapter.data[index].evidence     = evidence;
         chapter.data[index].actions      = actions;
     });

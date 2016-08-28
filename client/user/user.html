@@ -4,10 +4,10 @@
         <title>User Dashboard</title>
     </head>
     <body>
+        {{> nav}}
         <div class="super-main-container">
             {{> userDashboardAside}}
-            <div class="content-container">
-                {{> nav}}
+            <div class="content-container">        
                 {{> userHeader}}
                 {{> yield}}
             </div>
