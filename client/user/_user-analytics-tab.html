@@ -4,18 +4,68 @@
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                     <h2>MyPerformance</h2>
-                    {{#if Template.subscriptionsReady}}
-                        <h3>Unit Compliance Statistics</h3>
-                        {{> chart type="pie" data=unitComplianceChartData}}
-                        <h4 class="center-text">Complied {{ unitCompliancePercentage }} of applicable standards. ({{ unitVerbalCompliance }})</h4>
-                    {{/if}}
-                    {{#if Template.subscriptionsReady}}
-                        <h3>User Compliance Statistics</h3>
-                        {{> chart type="doughnut" data=userComplianceChartData}}
-                        <h4 class="center-text">Complied {{ userCompliancePercentage }} of applicable standards. ({{ userVerbalCompliance }})</h4>
-                    {{/if}}
+                    <div class="card card-nav-tabs">
+                        <div class="header header-success">
+                            <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                            <div class="nav-tabs-navigation">
+                                <div class="nav-tabs-wrapper">
+                                    <ul class="nav nav-tabs" data-tabs="tabs">
+                                        <li class="active">
+                                            <a href="#unit" data-toggle="tab">
+                                                My Unit's Compliance Status
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#performance" data-toggle="tab">
+                                                My Performance Status
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#accomplished" data-toggle="tab">
+                                                Accomplished Compliances
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#pending" data-toggle="tab">
+                                                Pending Tasks
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="tab-content text-center">
+                                <div class="tab-pane active" id="unit">
+                                    {{#if Template.subscriptionsReady}}
+                                    <h3>Unit Compliance Statistics</h3>
+                                    {{> chart type="pie" data=unitComplianceChartData}}
+                                    <h4 class="center-text">Complied {{ unitCompliancePercentage }} of applicable standards. ({{ unitVerbalCompliance }})</h4>
+                                    {{/if}}
+                                </div>
+                                <div class="tab-pane" id="performance">
+                                    {{#if Template.subscriptionsReady}}
+                                    <h3>User Compliance Statistics</h3>
+                                    <h4>Name of Unit: </h4>
+                                    {{> chart type="doughnut" data=userComplianceChartData}}
+                                    <h4 class="center-text">Complied {{ userCompliancePercentage }} of applicable standards. ({{ userVerbalCompliance }})</h4>
+                                    {{/if}}
+                                </div>
+                                <div class="tab-pane" id="accomplished">
+                                    <p>Cupcake ipsum dolor sit. Amet bonbon oat cake tootsie roll liquorice. Jelly-o candy canes dessert bonbon sesame snaps cake marzipan I love croissant. Cake I love gingerbread tootsie roll.
+                                        Cake icing marzipan I love I love pudding I love chupa chups I love. Cupcake pudding cotton candy candy canes candy canes chocolate cake candy canes pudding. Icing marshmallow I love cookie.
+                                        Chocolate cake wafer I love toffee pastry lollipop. Cotton candy candy halvah jujubes marzipan. Bonbon chupa chups biscuit pie jujubes soufflé biscuit danish lollipop. Jelly beans candy canes chupa chups.</p>
+                                    </div>
+                                    <div class="tab-pane" id="pending">
+                                        <p>Cupcake ipsum dolor sit amet pie toffee. Bonbon tiramisu brownie toffee I love lemon drops pudding jelly. Pie I love cotton candy donut lollipop cake cake sweet macaroon.
+                                            I love donut brownie sweet sweet. Pastry pastry dragée I love. Lollipop chocolate cake candy canes chocolate I love candy canes I love. Gingerbread dragée I love oat cake sweet.
+                                            Pie pie oat cake donut. Halvah brownie gummies muffin lollipop gummi bears pudding cake. Liquorice I love pudding brownie. Chupa chups chocolate chupa chups pie sugar plum.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-</template>
+            </section>
+        </template>
