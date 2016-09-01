@@ -1,0 +1,8 @@
+<template name="userUserComplianceStats">
+    {{#if Template.subscriptionsReady}}
+        <h3>User Compliance Statistics</h3>
+        <h4>Name of Unit: </h4>
+        {{> chart type="doughnut" data=userComplianceChartData}}
+        <h4 class="center-text">Complied {{ userCompliancePercentage }} of applicable standards. ({{ userVerbalCompliance }})</h4>
+    {{/if}}
+</template>
