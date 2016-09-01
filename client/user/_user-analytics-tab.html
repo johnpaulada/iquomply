@@ -37,19 +37,10 @@
                         <div class="content">
                             <div class="tab-content text-center">
                                 <div class="tab-pane active" id="unit">
-                                    {{#if Template.subscriptionsReady}}
-                                    <h3>Unit Compliance Statistics</h3>
-                                    {{> chart type="pie" data=unitComplianceChartData}}
-                                    <h4 class="center-text">Complied {{ unitCompliancePercentage }} of applicable standards. ({{ unitVerbalCompliance }})</h4>
-                                    {{/if}}
+                                    {{> userUnitComplianceStats}}
                                 </div>
                                 <div class="tab-pane" id="performance">
-                                    {{#if Template.subscriptionsReady}}
-                                    <h3>User Compliance Statistics</h3>
-                                    <h4>Name of Unit: </h4>
-                                    {{> chart type="doughnut" data=userComplianceChartData}}
-                                    <h4 class="center-text">Complied {{ userCompliancePercentage }} of applicable standards. ({{ userVerbalCompliance }})</h4>
-                                    {{/if}}
+                                    {{> userUserComplianceStats}}
                                 </div>
                                 <div class="tab-pane" id="accomplished">
                                     <p>Cupcake ipsum dolor sit. Amet bonbon oat cake tootsie roll liquorice. Jelly-o candy canes dessert bonbon sesame snaps cake marzipan I love croissant. Cake I love gingerbread tootsie roll.
