@@ -29,6 +29,10 @@ Template.globalUnitComplianceChart.helpers({
         return Template.instance().unitChartData.get();
     },
 
+    complianceStats: function() {
+        return Template.instance().unitComplianceStats.get();
+    },
+
     dataPercentage: function() {
         var stats = Template.instance().unitComplianceStats.get();
 

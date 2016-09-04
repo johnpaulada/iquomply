@@ -25,6 +25,10 @@ Template.userUnitComplianceStats.onCreated(function() {
 });
 
 Template.userUnitComplianceStats.helpers({
+    complianceStats: function() {
+        return Template.instance().unitComplianceStats.get();
+    },
+
     unitComplianceChartData: function() {
         return Template.instance().unitChartData.get();
     },

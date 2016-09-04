@@ -1,9 +1,13 @@
 <template name="globalUnitComplianceChart">
     {{#if Template.subscriptionsReady}}
         <h3>Global Unit Compliance Statistics</h3>
-        {{> chart type="pie" data=chartData}}
-        <h4 class="center-text">
-            Complied {{ dataPercentage }} of applicable standards. ({{ dataVerbal }})
-        </h4>
+        {{#if complianceStats}}
+            {{> chart type="pie" data=chartData}}
+            <h4 class="center-text">
+                Complied {{ dataPercentage }} of applicable standards. ({{ dataVerbal }})
+            </h4>
+        {{else}}
+            <h4>No data yet.</h4>
+        {{/if}}
     {{/if}}
 </template>

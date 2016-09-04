@@ -1,10 +1,14 @@
 <template name="userUnitComplianceStats">
     {{#if Template.subscriptionsReady}}
         <h3>Unit Compliance Statistics</h3>
-        {{> chart type="pie" data=unitComplianceChartData}}
-        <div class="progressbar progressbar-green">
-            <div class="progressbar-inner" style="width: {{unitCompliancePercentage}};"></div>
-        </div>
-        <h4 class="center-text">Complied {{ unitCompliancePercentage }} of applicable standards. ({{ unitVerbalCompliance }})</h4>
+        {{#if complianceStats}}
+            {{> chart type="pie" data=unitComplianceChartData}}
+            <div class="progressbar progressbar-green">
+                <div class="progressbar-inner" style="width: {{unitCompliancePercentage}};"></div>
+            </div>
+            <h4 class="center-text">Complied {{ unitCompliancePercentage }} of applicable standards. ({{ unitVerbalCompliance }})</h4>
+        {{else}}
+            <h4>No data yet.</h4>
+        {{/if}}
     {{/if}}
 </template>

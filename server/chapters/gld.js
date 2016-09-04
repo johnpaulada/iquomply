@@ -1,11 +1,93 @@
 (function() {
-    if (Chapters.find({code: 'acc'}).fetch().length == 0) {
+    if (Chapters.find({code: 'gld'}).fetch().length == 0) {
         Chapters.insert({
-            name: "Access to Care and Continuity of Care",
-            code: "acc",
+            name: "Governance,Leadership and Directions ",
+            code: "gld",
             data: [
+            {
+                    question: "Is the hospital’s governance structure described in a written document(s), and those responsible for governance of the hospital are identified by name and governance function?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {
+                    question: "Are governance responsibilities and accountabilities described in the document(s)?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {
+                    question: "Does the document(s) describe how the governing entity will be evaluated and the criteria approved for the evaluation process",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {
+                    question: "Is there an annual evaluation conducted of the governing entity and the results are documented?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {
+                    question: "Does the document(s) describe when and how governance and senior management authority can be delegated?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {
+                    question: "Do those responsible for governance approve, periodically review, and make public the hospital’s mission statement?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+
+{
+                    question: "Do those responsible for governance approve the hospital’s strategic plans, operational plans, policies, and procedures?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {
+                    question: "Do those responsible for governance approve the hospital’s capital and operating budget(s) and allocate other resources required to meet the hospital’s mission? (Also see COP.8)",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {
+                    question: "Do those responsible for governance approve the hospital’s participation in health care professional education and in research and in the oversight of the quality of such programs?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
                 {
-                    question: "Based on the results of screening, is it determined if the needs of the patient match the hospital’s mission and resources?",
+                    question: "Do those responsible for governance and appoint, and annually evaluate, the hospital’s chief executive(s) using established criteria and process?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -14,7 +96,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients accepted only if the hospital can provide the necessary services and the appropriate outpatient or inpatient setting for care?",
+                    question: "Do those responsible for governance annually approve the hospital’s program for quality and patient safety?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -23,7 +105,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a process to provide the results of diagnostic tests to those responsible for determining if the patient is to be admitted, transferred or referred? ",
+                    question: "Do those responsible for governance at least quarterly receive and act on reports of the quality and patient safety program, including reports of adverse and sentinel events? (Also see QPS.4.1, ME.5)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -32,7 +114,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are specific screening tests or evaluations identified when the hospital requires them prior to admission or registration?",
+                    question: "Do minutes reflect actions taken and any follow-up on those actions?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -41,7 +123,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients not admitted, transferred, or referred before the test results required for these decisions are available?",
+                    question: "Does the education and experience of the chief executive(s) match the requirements in the position description?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -50,7 +132,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the hospital use an evidence-based triage process to prioritize patients with immediate needs?",
+                    question: "Does the chief executive(s) manage the hospital’s day-to-day operations, including those responsibilities described in the position description?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -59,7 +141,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are staff trained to use the criteria? ",
+                    question: "Does the chief executive(s) recommend policies, strategies plans, and budgets to the governing body?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -68,7 +150,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients prioritized based on the urgency of their needs?",
+                    question: "Does the chief executive(s) ensure compliance with approved policies?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -77,7 +159,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are emergency patients assessed and stabilized within the capacity of the hospital prior to transfer?",
+                    question: "Does the chief executive(s) ensure compliance with applicable laws and regulations?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -86,7 +168,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is stabilizing treatment provided prior to transport documented in a record maintained by the transferring hospital?",
+                    question: "Does the chief executive(s) respond to any reports from inspecting and regulatory agencies?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -95,7 +177,17 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are inpatients and outpatients informed when there will be a delay in care and /or treatment?",
+                    question: "Are the chief executive(s) and hospital identified by title and name and their collective accountabilities are described in written documents?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+
+{
+                    question: "Is hospital leadership responsible for defining the hospital’s mission?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -104,7 +196,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients informed of the reasons for the delay or wait and provided with information on available alternatives consistent with their clinical needs?",
+                    question: "Is hospital leadership responsible for creating the policies and procedures necessary to carry out the mission?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -113,7 +205,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the information documented in the patient record?",
+                    question: "Does hospital leadership ensure that policies and procedures are followed?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -122,7 +214,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the outpatient registration process standardized?",
+                    question: "Does hospital leadership determine and plan with department/ service leaders the type of care and services to be provided by the hospital that are consistent with the hospital’s mission and needs of the patients served by the hospital? (Also see ACC.1, ME.1)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -131,7 +223,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the inpatient admitting process standardized?",
+                    question: "Does the hospital leadership communicate with key stakeholders in its community to facilitate access to care and access to information about its patient care services?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -140,7 +232,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a process for admitting emergency patients to inpatient units?",
+                    question: "Does the hospital leadership provide data and information on the quality of its services to stakeholders? (Also see QPS.6, ME.4)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -149,7 +241,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a process for holding patients for observation?",
+                    question: "Does hospital leadership describe and document the care and services to be provided?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -158,7 +250,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are staff familiar with and do they follow all of the admission and registration processes?",
+                    question: "Does the hospital leadership ensure that processes are in place for communicating relevant information throughout the hospital in a timely manner?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -167,7 +259,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the screening assessment help staff identify the patient’s needs?",
+                    question: "Does the hospital leadership ensure effective communication among clinical and nonclinical departments, services, and individual staff members?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -176,7 +268,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the service or unit selected to meet these needs based on the screening assessment findings?",
+                    question: "Does the hospital leadership communicate the hospital’s vision, mission, goals, policies, and plans to staff?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -185,7 +277,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients’ needs related to preventive, curative, rehabilitative, and palliative services prioritized?",
+                    question: "Does the hospital develop and implement a process for staff recruitment? (Also see SQE.2, ME 1)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -194,7 +286,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are the patient and family provided with information at admission? ",
+                    question: "Does the hospital develop and implement a process for staff retention?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -203,7 +295,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the information include proposed care?",
+                    question: "Does the hospital develop and implement a process for staff personal development and continuing education? (Also see SQE.8)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -212,7 +304,17 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the information include expected outcomes of care?",
+                    question: "Is the planning collaborative and include all departments and services in the hospital?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+
+{
+                    question: "Does the leadership participate in developing process and implementing a hospital wide quality improvement and patient safety program",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -221,7 +323,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the information include any expected costs to the patient or family?",
+                    question: "Does the hospital leadership select and implement a hospital wide process to measure, assess data, plan change, and sustain improvements in quality and patient safety, and provides for staff education on this quality improvement process?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -230,7 +332,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the hospital develop and implement a process that supports the flow of patients throughout the hospital that includes at least a) through g) of-the intent?",
+                    question: "Does the hospital leadership determine how the program will be directed and managed on a daily basis and ensures that the program has adequate technology and other resources to be effective?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -239,7 +341,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the hospital plan and provide for the care of patients needing admission who are boarded in the ED, including identifying a time limit for boarding?",
+                    question: "Does the hospital leadership implement a structure and process for the overall monitoring and coordination of the quality improvement and patient safety program?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -248,7 +350,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the hospital plan and provide for care to patients when bed space is not available in the desired service or unit or elsewhere in the facility?",
+                    question: "Does hospital leadership report on the quality and patient safety program quarterly to governance?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -257,7 +359,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the individuals who manage patient flow processes review the effectiveness to identify and implement process improvements?",
+                    question: "Does hospital leadership report to governance include, at least once every six months, the number and type of sentinel events and roots causes, whether the patients and families were informed of the  sentinel events, actions taken to improve safety in response to sentinel events, and if the improvements were sustained? (Also see QPS.7)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -266,7 +368,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Has the hospital established entry and/or transfer criteria for admission to intensive and specialized services or units, including research and other programs to meet special patient needs? ",
+                    question: "Is the information on the quality and patient safety program regularly communicated to staff, including progress on meeting the International Patient Safety Goals?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -275,7 +377,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the criteria utilize prioritization, diagnostic, and/or objective parameters, including physiologic-based criteria?",
+                    question: "Does hospital leadership use available to set collective priorities for hospitalwide measurements and improvement activities and consider potential system improvements?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -284,7 +386,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are the individuals from intensive/ specialty units involved in developing the criteria?",
+                    question: "Does hospital leadership ensure that, when present, clinical research and health professional education programs are represented in the priorities?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -293,7 +395,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are staff trained to apply the criteria?",
+                    question: "Do hospital leadership priorities include full compliance with the International Patient Safety Goals?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -302,7 +404,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the records of patients who are admitted to units providing intensive/ specialized services contain evidence that they meet the criteria for services?",
+                    question: "Does hospital leadership assess the impact of hospitalwide and department/service improvements on efficiency and resource use? (Also see QPS.5)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -311,7 +413,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Has the hospital established discharge and/or transfer criteria from intensive and specialized services or units to a different level of care, including research and other programs?",
+                    question: "Is hospital leadership accountable for contracts to meet patient and management needs?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -320,7 +422,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the criteria used for discharge or transfer includes the criteria used for admission to the next level of care?",
+                    question: "Has the hospital written a description of the nature and scope of those services to he provided through contractual agreements?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -329,7 +431,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are individuals from intensive or specialty units involved in developing the criteria?",
+                    question: "Do health professional staff contracts require credential review comparable to the hospital’s review process?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -338,7 +440,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are staff trained to apply the criteria?",
+                    question: "Do department/service leaders share accountability for the review, selection, and monitoring of clinical and nonclinical contracts? (Also see AOP.5.1, ME 5 and AOP.6.1, Me.5)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -347,7 +449,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the records of patients who are transferred or discharged from units providing intensive or specialized services contain evidence that they no longer meet the criteria for services?",
+                    question: "When contracts are renegotiated or terminated, Does the hospital maintain the continuity of patient services?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -356,7 +458,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the leaders of departments and services design and implement processes that support continuity and coordination of care, including at least to the following elements: a) emergency services and inpatient admission; b) diagnostic services and treatment services; c) surgical and nonsurgical treatment services; d) outpatient care programs; and e) other organizations and other care settings. (Also see GLD.10)",
+                    question: "Do all contracts stipulate the quality data that are to be reported to the hospital, the reporting frequency and mechanism, and how the hospital will respond when quality requirements or expectations are not met?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -365,7 +467,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the patient’s record(s) available to those practitioners who are authorized to have access and need it for the care of the patient? ",
+                    question: "Is quality data reported under contracts integrated into the hospital’s quality monitoring program?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -374,7 +476,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the patient’s record(s) up to date to ensure communication of the latest information?",
+                    question: "Do the relevant clinical and managerial leaders participate with the quality improvement program in the analysis of quality and safety information from outside contracts?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -383,7 +485,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are continuity and coordination of care processes supported by the use of tools, such as care plans, guidelines, or other such tools?",
+                    question: "Does hospital leadership determine those services that will be provided by independent practitioners outside the hospital?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -392,7 +494,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are continuity and coordination evident throughout all phases of patient care?",
+                    question: "Are all diagnostic, consultative, and treatment services provided by independent practitioners outside the hospital, such as telemedicine, teleradiology, and interpretations of other  diagnostics, such as electrocardiogram (ECG), electroencephalogram (EEG), and electromyogram, (EMG), and the like, are privileged by the hospital to provide such services?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -401,7 +503,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the individual(s) responsible for the coordination of the patient’s care identified in the patient’s record and available through all phases of inpatient care?",
+                    question: "Are independent practitioners who provide patient care on the services on the premises of the hospital but are not employees or members of the clinical staff credentialed and privileged as required in SQE.9 through SQE.12?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -410,7 +512,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the individual(s) qualified to assume responsibility for the patient’s care?",
+                    question: "Is the quality of services by independent practitioners outside the hospital monitored as a component of the hospital’s quality improvement program?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -419,7 +521,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a process for transferring the responsibility for coordination of care from individual to individual?",
+                    question: "Does hospital leadership seek data to inform decisions related to the purchase and use of new technologies?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -428,7 +530,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the process identify how these individuals assume the transferred responsibility and document their participation or coverage?",
+                    question: "Does hospital leadership use data and information on the quality and safety implications of medical technology choices?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -437,7 +539,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the patient’s record or a summary of patient care information transferred with the patient to another service or unit in the hospital?",
+                    question: "Does hospital leadership use data and information on the quality and safety implications of staffing choices?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -446,7 +548,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the summary contain the reason for admission?",
+                    question: "Does hospital leadership monitor the results of its decision and uses the data to evaluate and improve the quality of its resources purchasing and allocation decisions?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -455,7 +557,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the summary contain the significant findings?",
+                    question: "Does hospital use the recommendations of professional organizations and other authoritative sources in making resource decisions?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -464,7 +566,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the summary contain any diagnosis made?",
+                    question: "Does hospital leadership identify the supply chain of critical supplies and medical technology?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -473,7 +575,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the summary contain any procedures performed?",
+                    question: "Does hospital leadership evaluate the integrity of each supplier in that chain?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -482,7 +584,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the summary contain any medications and other treatments?",
+                    question: "Does hospital leadership make resource decisions based on their understanding of the risks in the supply chain?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -491,7 +593,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the summary contain the patient’s condition at transfer?",
+                    question: "Does hospital leadership track critical supplies to prevent diversion or substitution?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -500,7 +602,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients referred and/ or discharged based on their health status and needs for continuing care?",
+                    question: "Is there a professional staff structure(s) used by medical, nursing, and other department/ service leaders to carry their responsibilities and authority?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -509,7 +611,17 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the patient’s readiness for discharge determined by the use of relevant criteria or indications that ensure patient safety?",
+                    question: "Is the structure appropriate to the hospital’s size and complexity?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+
+{
+                    question: "Do the organizational structure(s) and processes support a culture of safety and professional communication?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -518,7 +630,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the planning for referral and/ or discharge begin early in the care process?",
+                    question: "Do the organizational structure(s) and processes support clinical planning and policy development?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -527,7 +639,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a process for patients being permitted to leave the hospital during the planned course of treatment on an approved pass for a defined period of time?",
+                    question: "Do the organizational structure(s) and process support oversight of professional ethical issues?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -536,7 +648,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients and families educated about the safe and effective use of all medications, potential side effects of medications, and prevention of potential interactions with over-the-counter medications and/or food?",
+                    question: "Do the organizational structure(s) and process support oversight of the quality of clinical services?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -545,7 +657,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients and families educated about safe and effective use of medical technology?",
+                    question: "Is each department or service in the hospital directed by an individual with the training, education, and experience comparable to the services provided? (Also see AOP.5.11, ME.1 and COP.8.1)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -554,7 +666,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients and families educated about proper diet and nutrition?",
+                    question: "Do department/ service leaders recommend space, medical technology, equipment, staffing, and other resources needed by the department or service and have a process in place to respond to shortages? (Also see Aop.6.2,ME.5; Cop.3.2; COP.8; and SQE.6",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -563,7 +675,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients and families educated about pain management?",
+                    question: "Do department/service leaders recommend criteria for selecting the department’s or service’s professional staff and choose or recommend individuals who meet those criteria? (Also see COP.8.2)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -572,7 +684,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients and families educated about rehabilitation techniques?",
+                    question: "Do department/ service leaders provide orientation and training for all staff of the duties and responsibilities for the department or service to which they are assigned? (Also see AOP.53, ME.4; AOP.6.3, ME 4; and SQE.7)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -581,7 +693,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the discharge summary contain the reason(s) for admission, diagnoses, and comorbidities?",
+                    question: "Have department/ service leaders selected and use a uniform format and content for planning documents?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -590,7 +702,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the discharge summary contain significant physical and other findings?",
+                    question: "Do the departmental or service documents describe the current and planned services provided by each department or service?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -599,7 +711,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the discharge summary contain diagnostic and therapeutic procedures performed? ",
+                    question: "Does the departmental or service document guide the provision of identified services?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -608,7 +720,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the discharge summary contain significant medications, including discharge medications?",
+                    question: "Does the departmental or service document address the staff knowledge and skills needed to assess and to meet patient needs?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -617,7 +729,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the discharge summary contain the patient’s condition/ status at the time of discharge?",
+                    question: "Are there coordination and/ or integration of services within and with other departments and services?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -626,7 +738,17 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the discharge summary contain follow-up instructions?",
+                    question: "Do department/ service leaders implement hospitalwide quality measures that relate to the services provided by their department or service, including any contracted services for which they are responsible?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+
+{
+                    question: "Do department/ service leaders implement quality measures to reduce variation and improve processes within the department or service, including implementation of measures found in the Joint Commission International Library of Measures?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -635,7 +757,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are follow-up instructions provided in writing and in a form and language the patient can understand?",
+                    question: "Do department/ service leaders select measures based on the need for improvement, and once improvement has been sustained, select a new measure? (Also see QPS.10, ME.2)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -644,7 +766,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the instructions include any return for follow-up care?",
+                    question: "Do department and service quality measurement and improvement activities are integrated into and supported by the quality management and coordination structure of the organization? (Also see QPS.10)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -653,7 +775,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the instructions include when to obtain urgent care?",
+                    question: "Do department/ service leaders implement measures that will be useful in the ongoing professional practice review of the department’s or service’s physicians?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -662,7 +784,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is a discharge summary prepared by a qualified individual?",
+                    question: "Department/ service leaders implement measures that will be useful in the performance evaluation of nursing staff? (Also see SQE.14.1, ME.2)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -671,7 +793,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is a copy of the discharge summary provided to the practitioner responsible for the patient’s continuing or follow-up care?",
+                    question: "Do department/ service leaders implement measures that will be useful in the performance evaluation of other health professional staff? (Also see SQE.16.1, ME.2)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -680,7 +802,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is a copy of the discharge summary provided to the patient in cases in which information regarding the practitioner responsible for the patient’s continuing or follow-up care is unknown?",
+                    question: "On an annual basic, do department / service leaders collectively determine at least five hospitalwide priority areas on which to focus the use of clinical practice guidelines?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -689,7 +811,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is a copy of the completed discharge summary placed in the patient’s record in a time frame identified by the hospital",
+                    question: "Do department/ service leaders follow the process described in a) through h) of the intent in selecting and implementing clinical practice guidelines? a) selected from among those applicable to the services and patients of the hospital(mandatory national guidelines are included in the process, if present); b) evaluated for their relevance to identified patient populations;c) adapted when needed to the technology, drugs and other resources of the hospital or to accepted national professional norms; d) assessed for their scientific evidence and endorsement by an authoritative source; e) formally approved or adopted by the hospital; f) implemented and measured for consistent use and effectiveness; g) supported by staff trained to apply the guidelines or pathways; and h) periodically updated based on change in the evidence and evaluation processes and outcomes.",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -698,7 +820,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the hospital identify the types of outpatients receiving complex care and/or with complex diagnoses who require an outpatient profile? ",
+                    question: "Do department/service leaders implement clinical guidelines and any associated clinical pathways or clinical protocols for each identified priority are as relevant to the department/service? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -707,7 +829,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the information to be included in the outpatient profile identified by the clinicians who treat those patients?",
+                    question: "Do department/ service leaders demonstrate how the use of clinical practice guidelines, clinical pathways, and/ or clinical protocols has reduced variation in processes and outcomes?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -716,7 +838,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the hospital use a process that will ensure the availability of the outpatient profile in an easy to retrieve and review format?",
+                    question: "Does hospital leadership establish a framework for the hospital’s ethical management that promotes a culture of ethical practices and decision making to ensure the protection of patients and their rights?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -725,7 +847,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the process evaluated to see if it meets the needs of the clinicians and improves the quality and safety of outpatient clinical visits? ",
+                    question: "Does ethical framework ensure that patient care provided within business, financial, ethical, and legal norms?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -734,7 +856,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a process for managing inpatients and outpatients who notify staff that they are leaving against medical advice?",
+                    question: "Does hospital ensure nondiscrimination in employment practices and provision of patient care in the context of the cultural and regulatory norms of the country?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -743,7 +865,17 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the process include informing the patient of the medical risks of inadequate treatment?",
+                    question: "Does hospital leadership examine national and international ethical norms for incorporation when developing the hospital’s framework for ethical conduct?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+
+{
+                    question: "Does the hospital disclose its ownership and any conflicts of interest? (Also see AOP.5, ME.5 and AOP.6, ME.5)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -752,7 +884,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the patient discharged according to the hospital discharge process? ",
+                    question: "Does the hospital honestly portray its services to patients? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -761,7 +893,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "If the family physician of a patient leaving against medical advice is known and has not been involved in the process, is the physician notified?",
+                    question: "Does the hospital accurately bill for services and ensure that financial incentives and payment arrangements do not compromise patient care?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -770,7 +902,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the hospital have a process to try to identify the reasons for patients leaving against medical advice?",
+                    question: "Does the hospital’s framework for ethical management establish a mechanism by which health care providers and other staff may raise ethical concerns without fear of retribution?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -779,7 +911,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the process consistent with applicable laws and regulations, including requirements for reporting cases of infectious disease and cases in which patients may be a threat to themselves or others?",
+                    question: "Is support for identifying and addressing ethical concerns readily available and includes ethics resources and training for health care providers and other staff?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -788,7 +920,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a process for the management of inpatients and outpatients who leave the hospital against medical advice without notifying hospital staff?",
+                    question: "Does the hospital provide an effective and timely resolution to ethical conflicts that arise?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -797,7 +929,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a process for the management of outpatients receiving complex treatment who do not return for treatment?",
+                    question: "Does hospital leadership establish and support an organizational culture that promotes accountability and transparency?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -806,7 +938,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "If the family physician is known and has not been involved in the process, is the physician notified? ",
+                    question: "Does hospital develop and document a code of conduct and identifies and corrects behaviors that are unacceptable?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -815,7 +947,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the process consistent with applicable laws and regulations, including requirements for reporting cases of infectious disease and cases in which patients may be a threat to themselves or others?",
+                    question: "Does hospital leadership provide education and information (such as literature and advisories) relevant to the hospital’s culture of safety to all individuals who work in the hospital?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -824,7 +956,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are transfers of patients based on criteria developed by the hospital to address patients’ needs for continuing care?",
+                    question: "Does hospital leadership define how issues related to a culture of safety within the hospital are identified and managed?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -833,7 +965,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the referring hospital determine that the receiving organization can meet the needs of the patient to be transferred? ",
+                    question: "Does hospital leadership provide resources to promote and support the culture of safety within the hospital?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -842,7 +974,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are formal or informal arrangements with receiving organizations in place when patients are frequently transferred to the same organization(s)? ",
+                    question: "Does hospital leadership provide a simple, accessible, and confidential system for reporting issues relevant to a culture of safety in the hospital?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -851,7 +983,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the hospital develop a transfer process that addresses how responsibility for continuing care is moved to another practitioner or setting?",
+                    question: "Does hospital leadership ensure that all reports related to the hospital’s culture of safety are investigated in a timely manner?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -860,7 +992,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the transfer process identify who is responsible for monitoring the patient during transfer and the staff qualifications required for the type of patient being transferred?",
+                    question: "Does hospital identify systems issues that lead health care providers to engage in unsafe behaviors?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -868,8 +1000,18 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
+
+{
+                    question: "Does hospital leadership use measures to evaluate and monitor the safety culture within the hospital and implement improvements identified from measurement and evaluation?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
                 {
-                    question: "Does the transfer process identify the medications, supplies, and medical technology required during transport?",
+                    question: "Does hospital leadership implement a process to prevent retribution against individuals who reports issues related to the culture of safety?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -878,7 +1020,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the transfer process address a follow-up mechanism that provides information about the patient’s condition upon arrival to the receiving organization? ",
+                    question: "Does the hospital provide a mechanism(s) for oversight of the training program(s)?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -887,7 +1029,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the transfer process address the situations in which transfer is not possible? ",
+                    question: "Does the hospital obtain and accept the parameters of the sponsoring academic program?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -896,7 +1038,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a process to evaluate the quality and safety of the transfer process?",
+                    question: "Has the hospital a complete record of all students and trainees within the hospital?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -905,7 +1047,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is a patient clinical summary document transferred with the patient? ",
+                    question: "Has the hospital documentation of the enrollment status, licensure or certifications achieved, and academic classification of the students and trainees?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -914,7 +1056,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the clinical summary include patient status?",
+                    question: "Does the hospital understand and provide the required level of supervision for each type and level of student and trainee?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -923,7 +1065,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the clinical summary include procedures and other interventions provided?",
+                    question: "Does the hospital integrate students and trainees into its orientation, quality, patient safety, infection prevention and control, and other programs?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -932,7 +1074,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the clinical summary include the patient’s continuing care needs?",
+                    question: "Does hospital leadership identify the official(s) responsible for maintaining the development of and compliance with all human subjects research policies and procedures?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -941,7 +1083,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the records of transferred patients note the name of the receiving health care organization and the name of the individual agreeing to receive the patient?",
+                    question: "Does hospital leadership assume responsibility for patient protection irrespective of the sponsor of the research?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -950,7 +1092,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the records of transferred patients contain documentation or other notes as required by the policy of the transferring hospital?",
+                    question: "Does hospital leadership recognize and establish mechanisms for compliance with all regulatory and professional requirements related to research?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -959,7 +1101,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the records of transferred patients note the reason(s) for transfer?",
+                    question: "Does hospital leadership ensure that there is a source of indemnity insurance to adequately compensate patients participating in clinical research who experience an adverse event?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -968,7 +1110,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the records of transferred patients note any special conditions related to transfer?",
+                    question: "Are appropriate patients and families identified and informed about how to gain access to clinical research, clinical investigation, or clinical trials relevant to their treatment needs?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -976,8 +1118,17 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
+{
+                    question: "Are patients and families asked to participate informed about expected benefits?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
                 {
-                    question: "Is there an assessment of transportation needs when any patient is referred to another source of care, transferred to another care setting, or ready to go home following an inpatient admission or outpatient visit?",
+                    question: "Are patients and families asked to participate informed about potential discomforts and risks?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -986,7 +1137,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the transportation provided or arranged appropriate to the needs and condition of the patient? ",
+                    question: "Are patients and families informed about alternatives that might also help them?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -995,7 +1146,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the transport vehicles owned by the hospital meet relevant laws and regulations related to their operation, condition, and maintenance? ",
+                    question: "Are patients and families asked to participate informed about the procedures that must be followed?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1004,7 +1155,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do transportation services, including contracted services, meet the hospital’s requirements for quality and safe transport",
+                    question: "Are patient and families assured that their refusal to participate or withdraw from participation will not compromise their access to the hospital’s services?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1013,7 +1164,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do all vehicles used for transportation, contracted or hospital owned, comply with the infection control program and have appropriate medical technology, supplies, and medications to meet the needs of the patient being transported?",
+                    question: "Are patients and families informed about the research and the potential benefits and risks to patients who decide to participate?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1022,7 +1173,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a process in place to monitor the quality and safety of the transportation provided or arranged by the hospital, including a complaint process? ",
+                    question: "Are patients and families informed about their rights related to withdrawing from participation?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1031,7 +1182,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "",
+                    question: "Are patients and families informed about the rights to confidentiality and security of information? (Also see MOI.2)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1040,7 +1191,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "",
+                    question: "Are patients and families informed about the hospital’s process for obtaining consent?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1049,7 +1200,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "",
+                    question: "Is informed consent obtained when a patient decides to participate in clinical research, clinical investigations, or clinical trials?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1058,7 +1209,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "",
+                    question: "Is the identity of the individuals(s) providing the information and obtaining the consent noted in the patient’s record?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1067,7 +1218,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "",
+                    question: "Is consent documented and dated in the patient’s record by signature or record of verbal consent?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1076,7 +1227,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "",
+                    question: "Has the hospital a committee or other mechanism such as a hospital-specific or shared Institutional Review Board (IRB) to oversee all research within the hospital?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1085,7 +1236,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "",
+                    question: "Does the hospital develop a clear statement of purpose for the oversight activities?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1094,7 +1245,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "",
+                    question: "Do oversight activities include a review process?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1103,7 +1254,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "",
+                    question: "Do oversight activities include a process to weigh relative risks and benefits to subjects?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -1112,15 +1263,15 @@
                     personResponsible: ""
                 },
                 {
-                    question: "",
+                    question: "Do oversight activities include processes to provide confidentiality and security of research information?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
                     actions: "",
                     completionDate: new Date(),
                     personResponsible: ""
-                }
-            ]
+                },
+                ]
         });
     }
 })();

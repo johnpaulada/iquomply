@@ -16,8 +16,11 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="/user-dashboard">Dashboard</a></li>
                     {{#if currentUser}}
+                        {{#if isInRole 'admin,super-admin'}}
+                            <li class="{{ adminActiveClass }}"><a href="/admin-dashboard">Admin Dashboard</a></li>
+                        {{/if}}
+                        <li class="{{ userActiveClass }}"><a href="/user-dashboard">User Dashboard</a></li>
                         <li class="dropdown">
                             <a href="/profile" class="dropdown-toggle" data-toggle="dropdown">{{currentUser.profile.firstName}}<b class="caret"></b></a>
                             <ul class="dropdown-menu">

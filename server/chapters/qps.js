@@ -1,11 +1,12 @@
 (function() {
-    if (Chapters.find({code: 'asc'}).fetch().length == 0) {
+    if (Chapters.find({code: 'qps'}).fetch().length == 0) {
         Chapters.insert({
-            name: "Anesthesia and Surgery Care",
-            code: "asc",
+            name: "Quality Improvement and Patient Safety",
+            code: "qps",
             data: [
-                {
-                    question: "Do sedation and anesthesia services meet professional standards and applicable local and national standards, laws, and regulations?  ",
+                {   //Management of Quality and Patient Safety Activities
+                    //QPS.1 A qualified individual guides the implementation of the hospital’s program for quality improvement and patient safety and manages the activities needed to carry out an effective program of continuous quality improvement and patient safety within the hospital. 
+                    question: "Is an individual(s) who is experienced in the methods and processes of improvement selected to guide the implementation of the hospital’s quality and patient safety program?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -14,7 +15,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are sedation and anesthesia services available to meet patient needs?",
+                    question: "Does the individual(s) with oversight for the quality program selects and supports qualified staff for the program and supports those staff with quality and patient safety responsibilities throughout the hospital?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -23,7 +24,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are sedation and anesthesia services available for emergencies after normal hours of operation?",
+                    question: "Do the quality programs provide support and coordination to department/service leaders for like measures across the hospital and for the hospital’s priorities for improvement?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -32,7 +33,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are outside sedation and anesthesia sources selected based on the recommendation of the leader of sedation and anesthesia services, acceptable records of performance, and compliance with applicable laws and regulations?",
+                    question: "Does the quality program implement a training program for all staff that is consistent with staff’s roles in the quality improvement and patient safety program?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -41,7 +42,17 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a contract for outside sedation and anesthesia services?",
+                    question: "Is the quality program responsible for the regular communication of quality issues to all staff?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //Measure Selection and Data Collection 
+                    //QPS.2 Quality and patient safety program staff support the measure selection process throughout the hospital and provide coordination and integration of measurement activities throughout the hospital.
+                    question: "Does quality and patient safety program support the selection of measures throughout the hospital at the hospitalwide level and at the hospital department or service level?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -50,7 +61,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are sedation and anesthesia services uniform throughout the hospital?",
+                    question: "Does quality and patient safety program provide coordination and integration of measurement activities throughout the hospital?     ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -59,7 +70,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are sedation and anesthesia services under the direction of one or more qualified individuals?",
+                    question: "Does quality and patient safety program provide for the integration of event reporting systems, safety culture measures, and others to facilitate integrated solutions and improvements?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -68,7 +79,16 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are responsibilities for recommending outside sources of sedation and anesthesia services defined and carried out?",
+                    question: "Does quality and patient safety program track the progress on the planned collection of measure data for the priorities selected?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //QPS.3 The quality and patient safety program uses current scientific and other information to support patient care, health professional education, clinical research, and management.
+                    question: "Does current scientific and other information support patient care?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -77,7 +97,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are responsibilities for monitoring and reviewing all sedation and anesthesia services defined and carried out?",
+                    question: "Does current scientific and other information support s clinical education?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -86,7 +106,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the administration of procedural sedation standardized throughout the hospital?",
+                    question: "Does current scientific and other information support research?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -95,7 +115,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: ". Does standardization of procedural sedation include identifying and addressing at least a) through e) in the intent? (also see PFR.5.2) a) areas in the hospital where procedural sedation occur; b) special qualifications or skills of staff involved in the procedural sedation process; c) the differences between pediatric, adult, and geriatric populations or other special considerations; d) availability and use of specialized medical technology; and e) obtaining informed consent for both the procedure and sedation",
+                    question: "Does current professional and other information supports management?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -104,7 +124,17 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are emergency medical technology and supplies readily available and customized to the type of sedation being performed and the age and medical condition of the patient?",
+                    question: "Is information provided in a time frame that meets user expectations?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //Analysis and Validation of Measurement Data
+                    //QPS.4 The quality and patient safety program includes the aggregation and analysis of data to support patient care, hospital management, and the quality management program and participation in external databases.
+                    question: "Has the quality and patient safety program a process to aggregate data?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -113,7 +143,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is an individual with advanced life-support training must be immediately available when procedural sedation is being performed? ",
+                    question: "Do aggregate data and information support patient care, hospital management, professional practice review, and the overall quality and patient safety program?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -122,7 +152,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are health care practitioners responsible for providing procedural sedation competent in at least a) through d) of the intent? a) techniques and various mode of sedation; b) pharmacology of sedation drugs and the use of reversal agents; c) monitoring requirements; and	 d) response to complications (Also see SQE.10) ",
+                    question: "Are aggregate data and information provided to agencies outside the hospital when required by laws or regulations?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -131,7 +161,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the individual responsible for patient monitoring during procedural sedation competent in at least elements e) through h) in the intent? e) monitoring requirements;  f) response to complications; g) use of reversal agents; and  h) recovery criteria (Also see SQE.3)",
+                    question: "Is there a process to contribute to and learn from external database for comparison purposes? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -140,7 +170,16 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are procedural sedation competencies for all staff involved in sedation documented in the personnel files?",
+                    question: "Are security and confidentiality maintained when contributing to or using external database?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //QPS.4.1 Individuals with appropriate experience, knowledge, and skills systematically aggregate and analyze data in the hospital. 
+                    question: "Are data aggregated, analyzed, and transformed into useful information to identify opportunities for improvement?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -149,7 +188,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is there a pre-sedation assessment performed and documented that include at least a) through e) to evaluate risk and appropriateness of procedural sedation for the patient? (Also see AOP.1, MEs 1 and 2) a)	Identify any airway problems that may influence the type of sedation used; b)	Evaluate at risk –patients for appropriateness of procedural sedation; c)	Plan the type of sedation and the level of sedation the patient will need based on the procedure being performed; d)	Safely administer sedation; and e)	 Interpret findings from patient monitoring during procedural sedation and recovery. ",
+                    question: "Do individuals with appropriate clinical or managerial experience, knowledge, and skills, participate in the process?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -158,7 +197,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does a qualified individual monitor the patient during the period of sedation and document the monitoring?",
+                    question: "Are statistical tools and techniques used in the analysis process when suitable?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -167,7 +206,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are established criteria used and documented for the recovery and discharge from procedural sedation?",
+                    question: "Is the frequency of data analysis appropriate to the process or outcome being studied?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -176,7 +215,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are the patient, family, and/or decision makers educated on the risks, benefits, and alternative of procedural sedation?",
+                    question: "Are the results of analysis reported to those accountable for taking action? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -185,7 +224,16 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are the patient, family, and/or decision makers educated about post-procedure analgesia?",
+                    question: "Do data analysis support comparison internally over time, including comparisons with database of like organizations, with best practices, and objective scientific professional sources?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //QPS.5 The data analysis process includes at least one determination per year of the impact of hospitalwide priority improvements on cost and efficiency. 
+                    question: "Are data on the amount and type of resource use collected on at least one hospitalwide priority improvement project per year before and following the improvement?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -194,7 +242,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does a qualified individual provide the education?",
+                    question: "Do the quality and patient safety program staff work with other units such as human resources, information technology, and finance in deciding which data are to be collected?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -203,7 +251,16 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is a pre-anesthesia assessment performed for each patient? (Also see AOP.1, MEs 1 and 2)",
+                    question: "Are the results and analysis used to refine the process and are reported through the quality coordination mechanism to leadership?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //QPS.6 The hospital uses an internal process to validate data. 
+                    question: "Is data validation use by the quality program as a component of the improvement process selected by leadership?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -212,7 +269,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is a separate pre-induction assessment performed to re-evaluate patients immediately before the induction of anesthesia?",
+                    question: "Are data validated when any of the conditions noted in a) through f) in the intent are met? a) a new measure is implemented (in particular, those clinical measures that are intended to help a hospital evaluate and improve an important clinical process or outcome); b)	data will be made public on hospital’s website or in other ways; c)	a change has been made to an existing measure, such as data collection tools have changed or the data abstraction process or abstractor has changed; d)	the data resulting from an existing measures have changed in an unexplainable way; e)	the data source has changed, such as when part of the patient record has been turned into an electronic format thus the data source is now both electronic and paper; or f)	the subject of data collection has changed, such as changes in average age of patients, comorbidities, research protocol alteration, new practice guidelines implemented, or new technologies and treatment methodologies introduced.",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -221,7 +278,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are the two assessment performed by an individual(s) qualified to do so and documented in the patient record?",
+                    question: "Is an established methodology for data validation used?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -230,7 +287,16 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the anesthesia care of each patient planned and documented in the patient’s record?",
+                    question: "Does Hospital leadership assume accountability for the validity of the quality and outcome data made public?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //QPS.7 The hospital uses a defined process for identifying and managing sentinel events. 
+                    question: "Has the Hospital leadership established a definition of a sentinel event that at least includes a) through f) found in the intent? a) all confirmed transfusion reactions, if applicable to the hospital.; b)	all serious adverse drug events, if applicable and as defined by the hospital; c)	all significant medication errors, if applicable and as defined by the hospital; d)	all major discrepancies between preoperative and postoperative diagnoses; e)	adverse event or patterns of adverse events during moderate or deep sedation and anesthesia use; f)	other adverse events,; for example health care-associated infections and infectious disease outbreaks.",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -239,7 +305,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are the anesthesia agent, dose (when applicable), and anesthesia technique documented in the patient’s anesthesia record?",
+                    question: "Does the Hospital complete a root cause analysis of all sentinel events in a time period specified by hospital leadership that does not exceed 45 days from the date of the event or when made aware of the event?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -248,7 +314,16 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are the anesthesiologist and/or the nurse anesthetist and anesthesia assistants identified in the patient’s anesthesia record?",
+                    question: "Does hospital leadership take action on the results of the root cause analysis?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //QPS.8 Data are always analyzed when undesirable trends and variation are evident from the data.
+                    question: "Does intense analysis of data take place when adverse levels, patterns, or trends occur?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -257,7 +332,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are the frequency and type of monitoring during anesthesia and surgery based on the patient’s pre-anesthesia status, the anesthesia used, and the surgical procedure performed?",
+                    question: "Are all confirmed transfusion reactions, if applicable to the hospital, analyzed? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -266,7 +341,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the monitoring of the patient’s physiological status consistent with professional practice?",
+                    question: "Are all serious adverse drug events, if applicable and as defined by the hospital analyzed? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -275,7 +350,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are the results of the monitoring documented in the patient’s record?",
+                    question: "Are all significant medication errors, if applicable and as defined by the hospital analyzed? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -284,7 +359,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients monitored during the postanesthesia recovery period?",
+                    question: "Are all major discrepancies between preoperative and postoperative diagnoses analyzed?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -293,7 +368,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are monitoring finding documented in the patient’s clinical record?",
+                    question: "Are adverse events or patterns of adverse events during moderate or deep sedation and anesthesia use analyzed? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -302,7 +377,16 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patient’s discharged from the postqanesthesia unit (or recovery monitoring is discontinued) in accordance with the alternatives described in a) through c) in the intent? a)	The patient is discharged (or recovery monitoring is discontinued) by a fully qualified anesthesiologist o other individual authorized by the individual(s) responsible for managing the anesthesia services. b)	The patient is discharged (or recovering monitoring is discontinued) by a nurse or similarly qualified individual in accordance with postanesthesia criteria developed by hospital leadership, and the patient’s record contains evidence that criteria are met. c)	The patient is discharged to a unit that is capable of providing postanesthesia or postsedation care of selected patients, such as a cardiovascular intensive care unit or neurosurgical intensive care unit, among others.",
+                    question: "Are other adverse events defined by the hospital analyzed?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //QPS.9 The organization uses a defined process for the identification and analysis of near-miss events.
+                    question: "Does the hospital establish a definition of a near miss?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -311,7 +395,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is time recovery started and time recovery phase complete are recorded in the patient’s record?",
+                    question: "Does the hospital define the type of events to be reported?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -320,7 +404,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is the assessment information used to develop and to support the planned invasive procedure documented in the patient’s record by the responsible physician before the procedure is performed? (Also see AOP.5.4, ME 3; and AOP.6.4, ME 3)",
+                    question: "Does the hospital establish the process for the reporting of near misses?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -329,7 +413,17 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is each patient’s surgical care planned  based on the assessment information",
+                    question: "Are the data analyzed and actions taken to reduce near-miss events?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //Gaining and Sustaining Improvement
+                    //QPS.10 Improvement in quality and safety is achieved and sustained. 
+                    question: "Are the improvements in quality and patient safety planned, tested, and implemented?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -338,7 +432,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are pre-operative diagnosis and the planned procedure documented in the patient’s record by the responsible physician prior to the procedure?",
+                    question: "Are data available to demonstrate that improvements are effective and sustained? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -347,7 +441,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are the patient, family, and decision makers educated on the risks, benefits, potential complications, and alternative related to the planned surgical procedure?",
+                    question: "Does the policy change necessary to plan, to carry out, and to sustain the improvement are made?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -356,7 +450,16 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the education include the need for, risk and benefits of, and alternative to blood and blood-product use?",
+                    question: "Are successful improvements documented?",
+                    selected: false,
+                    accomplished: "No",
+                    evidence: "",
+                    actions: "",
+                    completionDate: new Date(),
+                    personResponsible: ""
+                },
+                {   //QPS. 11 An ongoing program of risk management is used to identify and to proactively reduce unanticipated adverse events and other safety risks to patients and staff.
+                    question: "Does the hospital risk management framework include a) through f) in the intent?       a) risk identification;       b) risk prioritization;       c) risk reporting;       d) risk management;       e) investigation of adverse events; and       f) management of related claims.",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -365,7 +468,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do the patient’s surgeon or other qualified individuals provide and document the education?",
+                    question: "At least annually, is a proactive risk-reduction exercise conducted on one of the priority risk processes?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -374,96 +477,15 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do surgical reports, templates, or operative progress notes include at least a) through h) from the intent?a) postoperative diagnosis; b) name of operative surgeon and assistants; c) procedures performed and description of each procedure findings; d) perioperative complications; e) surgical specimens sent for examination f) amount of blood loss and amount of transfused blood; g) registry number of all implantable devices; and h) date, time and signature of responsible physician.",
+                    question: "Are high-risk processes redesigned based on the analysis of the test results?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
                     actions: "",
                     completionDate: new Date(),
                     personResponsible: ""
-                },
-                {
-                    question: "Does the hospital identify information that may routinely be recorded in other specific areas of the record?",
-                    selected: false,
-                    accomplished: "No",
-                    evidence: "",
-                    actions: "",
-                    completionDate: new Date(),
-                    personResponsible: ""
-                },
-                {
-                    question: "Are the surgical report, template, or operative profess note available immediately after surgery before the patient is transferred to the next level of care?",
-                    selected: false,
-                    accomplished: "No",
-                    evidence: "",
-                    actions: "",
-                    completionDate: new Date(),
-                    personResponsible: ""
-                },
-                {
-                    question: "Does the postsurgical care provided by medical, nursing, and others meet the patient’s immediate postsurgical needs?",
-                    selected: false,
-                    accomplished: "No",
-                    evidence: "",
-                    actions: "",
-                    completionDate: new Date(),
-                    personResponsible: ""
-                },
-                {
-                    question: "Is the continuing postsurgical plan(s) documented in the patient’s record within 24 hours by the responsible surgeon or verified by a co-signature from the responsible surgeon on the documented plan entered by the surgeon’s delegate?",
-                    selected: false,
-                    accomplished: "No",
-                    evidence: "",
-                    actions: "",
-                    completionDate: new Date(),
-                    personResponsible: ""
-                },
-                {
-                    question: "Does the continuing of postsurgical plan of care include medical, nursing, and other as needed based on the patient’s needs?",
-                    selected: false,
-                    accomplished: "No",
-                    evidence: "",
-                    actions: "",
-                    completionDate: new Date(),
-                    personResponsible: ""
-                },
-                {
-                    question: "When indicated by a change in the patient’s needs, is the postsurgical plan of care updated or revised based on the reassessment of the patient by the health care practitioners?",
-                    selected: false,
-                    accomplished: "No",
-                    evidence: "",
-                    actions: "",
-                    completionDate: new Date(),
-                    personResponsible: ""
-                },
-                {
-                    question: "Does the hospital’s surgical service define the type of implantable device that are included within its scope of services?",
-                    selected: false,
-                    accomplished: "No",
-                    evidence: "",
-                    actions: "",
-                    completionDate: new Date(),
-                    personResponsible: ""
-                },
-                {
-                    question: "Do policies and practices include a) through g) in the intent? a) selection of device base on available science and research; b) modifications to the surgical checklist to ensure that implants are present in the operating theatre and special considerations in marking the surgical site; c)the qualifications and training of any outside technical staff required during the implant procedure; d) an understanding of and reporting process for device-related adverse events; e) unique infection control considerations; f) any special discharge instructions to the patient; and g) the traceability of devices in the event of a recall ",
-                    selected: false,
-                    accomplished: "No",
-                    evidence: "",
-                    actions: "",
-                    completionDate: new Date(),
-                    personResponsible: ""
-                },
-                {
-                    question: "Are medical device implants included in the department’s monitoring priorities?",
-                    selected: false,
-                    accomplished: "No",
-                    evidence: "",
-                    actions: "",
-                    completionDate: new Date(),
-                    personResponsible: ""
-                },
-                 ]
+                }
+            ]
         });
     }
 })();
