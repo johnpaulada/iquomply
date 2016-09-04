@@ -1,0 +1,28 @@
+<template name="accomplishedCompliances">
+    <h3>Accomplished Compliances</h3>
+    <div class="">
+        <a class="btn btn-warning btn-block" href="/user-dashboard">Edit in MyCompliance</a>
+    </div>
+    {{#if Template.subscriptionsReady}}
+        {{#if progress}}
+            {{#each progress}}
+                {{#if selected}}
+                    <div class="card" style="margin-top: 3em;">
+                        <h4 class="header header-info">
+                            {{ name }}
+                        </h4>
+                        <div class="content">
+                            <ul class="list-group">
+                                {{#each data}}
+                                    {{#if selected}}
+                                        <li class="list-group-item">{{ question }}</li>
+                                    {{/if}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                {{/if}}
+            {{/each}}
+        {{/if}}
+    {{/if}}
+</template>

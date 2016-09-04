@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "Patient and Family Rights",
             code: "pfr",
+            selected: false,
             data: [
                 {
                     question: "Does hospital leadership work to protect and advance patient and family rights?",
@@ -23,7 +24,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Does the hospital respect the right of patients, and in some circumstances the right of the patient’s family, to have the prerogative to determine what information regarding their care would be provided to family or others, and under what circumstances?",
+                    question: "Does the hospital respect the right of patients, and in some circumstances the right of the patientï¿½s family, to have the prerogative to determine what information regarding their care would be provided to family or others, and under what circumstances?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -32,7 +33,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are all staff knowledgeable about patients’ rights and can they explain their responsibilities in protecting s’ rights?",
+                    question: "Are all staff knowledgeable about patientsï¿½ rights and can they explain their responsibilities in protecting sï¿½ rights?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -68,7 +69,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Are patients’ values and beliefs identified?",
+                    question: "Are patientsï¿½ values and beliefs identified?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -77,7 +78,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Do staff provide care that is respectful of the patient’s values and beliefs?",
+                    question: "Do staff provide care that is respectful of the patientï¿½s values and beliefs?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -104,7 +105,7 @@
                     personResponsible: ""
                 },
                 {
-                    question: "Is a patient’s expressed need for privacy respected for all clinical interviews, examinations, procedures/ treatments, and transport?",
+                    question: "Is a patientï¿½s expressed need for privacy respected for all clinical interviews, examinations, procedures/ treatments, and transport?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -133,7 +134,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Has the hospital determined its level of responsibility for patient’s possessions? ",
+                    question: "Has the hospital determined its level of responsibility for patientï¿½s possessions? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -142,7 +143,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Do patients receive information about the hospital’s responsibility for protecting personal belongings? ",
+                    question: "Do patients receive information about the hospitalï¿½s responsibility for protecting personal belongings? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -151,7 +152,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Are patients’ possessions safeguarded when the hospital assumes responsibility or when the patient is unable to assume responsibility?",
+                    question: "Are patientsï¿½ possessions safeguarded when the hospital assumes responsibility or when the patient is unable to assume responsibility?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -214,7 +215,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Does the hospital facilitate a patient’s request to seek a second opinion without fear of compromise to his or her care within or outside the hospital?",
+                    question: "Does the hospital facilitate a patientï¿½s request to seek a second opinion without fear of compromise to his or her care within or outside the hospital?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -295,7 +296,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Does the hospital’s position conform to its community’s religious and cultural norms and any legal or regulatory requirements?",
+                    question: "Does the hospitalï¿½s position conform to its communityï¿½s religious and cultural norms and any legal or regulatory requirements?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -304,7 +305,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Does the hospital inform patients and families about their rights to refuse or to discontinue treatment and the hospital’s responsibilities related to such decisions? ",
+                    question: "Does the hospital inform patients and families about their rights to refuse or to discontinue treatment and the hospitalï¿½s responsibilities related to such decisions? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -340,7 +341,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Does the hospital respect and support the patient’s right to assessment and management of pain?",
+                    question: "Does the hospital respect and support the patientï¿½s right to assessment and management of pain?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -349,7 +350,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Does the hospital respect and support the patient’s right to assessment and management of the dying patient’s needs? ",
+                    question: "Does the hospital respect and support the patientï¿½s right to assessment and management of the dying patientï¿½s needs? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -358,7 +359,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Do the hospital staff understand the personal, cultural, and societal influences on the patient’s experiences with pain?",
+                    question: "Do the hospital staff understand the personal, cultural, and societal influences on the patientï¿½s experiences with pain?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -367,7 +368,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Do the hospital staff understand the personal, cultural, and societal influences on the patient’s experience with death and dying?  ",
+                    question: "Do the hospital staff understand the personal, cultural, and societal influences on the patientï¿½s experience with death and dying?  ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -556,7 +557,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Is the identity of the individual providing the information to the patient and family noted in the patient’s record?",
+                    question: "Is the identity of the individual providing the information to the patient and family noted in the patientï¿½s record?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -565,7 +566,7 @@
                     personResponsible: ""
                 },
 		{
-                    question:"Are patients informed of the following elements as relevant to their condition and planned treatment? a) the patient’s condition; b) the proposed treatment (s); c) the name of person providing the treatment; d) potential benefits and drawbacks; e) possible alternatives; f) likelihood of success; g) possible problems related to recovery; and h) possible results of nontreatment. (Also see PFR.5.2)",
+                    question:"Are patients informed of the following elements as relevant to their condition and planned treatment? a) the patientï¿½s condition; b) the proposed treatment (s); c) the name of person providing the treatment; d) potential benefits and drawbacks; e) possible alternatives; f) likelihood of success; g) possible problems related to recovery; and h) possible results of nontreatment. (Also see PFR.5.2)",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -583,7 +584,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Does the hospital develop and implement a process to respond to a patient’s request for additional information on the practitioner responsible for his or her care?",
+                    question: "Does the hospital develop and implement a process to respond to a patientï¿½s request for additional information on the practitioner responsible for his or her care?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -610,7 +611,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Are individuals, other than the patient, granting consent noted in the patient’s record? ",
+                    question: "Are individuals, other than the patient, granting consent noted in the patientï¿½s record? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -655,7 +656,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Does the hospital define the organ- and tissue- donation processes and ensure that the process is consistent with the region’s laws and regulations and its religious and cultural values?",
+                    question: "Does the hospital define the organ- and tissue- donation processes and ensure that the process is consistent with the regionï¿½s laws and regulations and its religious and cultural values?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",

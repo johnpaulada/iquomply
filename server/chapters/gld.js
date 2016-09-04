@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "Governance,Leadership and Directions ",
             code: "gld",
+            selected: false,
             data: [
             {
                     question: "Is the hospital’s governance structure described in a written document(s), and those responsible for governance of the hospital are identified by name and governance function?",

@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "International Patient Safety Goals",
             code: "ipsg",
+            selected: false,
             data: [
                 {
                     question: "Are patients identified using two patient identifiers, not including the use of the patient’s room number or location?",

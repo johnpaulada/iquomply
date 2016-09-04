@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "Patient and Family Education",
             code: "pfe",
+            selected: false,
             data: [
 		{
                     question: "Does the hospital plan education that is consistent with its mission, services, and patient population? ",
@@ -41,7 +42,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Are educational needs assessment findings recorded in the patient’s record?",
+                    question: "Are educational needs assessment findings recorded in the patientï¿½s record?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -59,7 +60,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Are the patient’s literacy, including health care literacy, educational level, and language assessed? ",
+                    question: "Are the patientï¿½s literacy, including health care literacy, educational level, and language assessed? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -68,7 +69,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Are the patient’s emotional barriers and motivations assessed? ",
+                    question: "Are the patientï¿½s emotional barriers and motivations assessed? ",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -77,7 +78,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Are the patient’s physical and cognitive limitations assessed?",
+                    question: "Are the patientï¿½s physical and cognitive limitations assessed?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",
@@ -113,7 +114,7 @@
                     personResponsible: ""
                 },
 		{
-                    question: "Is verbal information reinforced with written material that is related to the patient’s needs and consistent with the patient’s and family’s learning preferences?",
+                    question: "Is verbal information reinforced with written material that is related to the patientï¿½s needs and consistent with the patientï¿½s and familyï¿½s learning preferences?",
                     selected: false,
                     accomplished: "No",
                     evidence: "",

@@ -10,8 +10,10 @@ ComplianceVerbalProgressGenerator = {
             return 'Moderately complying.'
         } else if (percentage >= 25) {
             return 'Slightly complying.'
+        } else if (percentage > 0) {
+            return 'Almost not complying.'
         }
 
-        return percentage;
+        return 'Unknown.';
     }
 }

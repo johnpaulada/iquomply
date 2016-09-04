@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "International Patient Safety Goals",
             code: "ipsg",
+            selected: false,
             data: [
                 {
                     question: "Are the information needs of those who provide clinical services considered in the planning process?",

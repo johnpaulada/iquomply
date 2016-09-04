@@ -35,8 +35,10 @@ Template.userUserComplianceStats.helpers({
 
     userCompliancePercentage: function() {
         var stats = Template.instance().userComplianceStats.get();
+        var percent = stats.yes / stats.total * 100;
 
-        return stats.yes / stats.total * 100 + '%';
+
+        return RoundOffer.roundOffToPlace(percent, 2) + '%';
     },
 
     userVerbalCompliance: function() {

@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "International Patient Safety Goals",
             code: "ipsg",
+            selected: false,
             data: [
                 {
                     question: "Is the decision to provide medical education made at the highest level of governance and leadership of the hospital, consistent with the hospital’s mission, and documented? ",

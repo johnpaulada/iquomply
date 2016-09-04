@@ -1,10 +1,11 @@
 (function() {
     if (Chapters.find({code: 'aop'}).fetch().length == 0) {
         Chapters.insert({
-            name: "Assesment of Patients",
-            code: "aop",
+            name: "MMU",
+            code: "mmu",
+            selected: false,
             data: [
-                {	//MMU.1 Medication use in the hospital is organized to meet patient needs, complies with applicable laws and regulations, and is under the direction and supervision of a licensed pharmacist or other qualified professional.  
+                {	//MMU.1 Medication use in the hospital is organized to meet patient needs, complies with applicable laws and regulations, and is under the direction and supervision of a licensed pharmacist or other qualified professional.
                     question: "Is written document identify how medication use organized and managed throughout the hospital?",
                     selected: false,
                     accomplished: "No",
@@ -59,7 +60,7 @@
                     personResponsible: ""
                 },
                 {	//Selection and Procurement
-                	//MMU.2 Medication for prescribing or ordering are stocked, and there is a process for medication not stocked or normally available in the hospital or for times when the pharmacy is closed. 
+                	//MMU.2 Medication for prescribing or ordering are stocked, and there is a process for medication not stocked or normally available in the hospital or for times when the pharmacy is closed.
                     question: "Is there a list of medication stocked in the hospital or readily available from outside sources?",
                     selected: false,
                     accomplished: "No",
@@ -86,7 +87,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//MMU.2.1 There is a method for overseeing the organization’s medication list and medication use. 
+                {	//MMU.2.1 There is a method for overseeing the organization’s medication list and medication use.
                     question: "Is there a method for overseeing medication use in the hospital?",
                     selected: false,
                     accomplished: "No",
@@ -132,7 +133,7 @@
                     personResponsible: ""
                 },
                 {	//Storage
-                	//MMU.3 Medications are properly and safely stored. 
+                	//MMU.3 Medications are properly and safely stored.
                     question: "Are medications stored under condition suitable for product stability, as they represent critical high-risk individual patient care units?",
                     selected: false,
                     accomplished: "No",
@@ -177,7 +178,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//MMU.3.1 There is a process for storage of medications and nutrition products that require special consideration.  
+                {	//MMU.3.1 There is a process for storage of medications and nutrition products that require special consideration.
                     question: "Does the hospital establish and implement a process for how products requiring special consideration are stored?",
                     selected: false,
                     accomplished: "No",
@@ -277,7 +278,7 @@
                     personResponsible: ""
                 },
                 {	//Ordering and Transcribing
-                	//MMU.4 Prescribing, ordering, and transcribing are guided by policies and procedures. 
+                	//MMU.4 Prescribing, ordering, and transcribing are guided by policies and procedures.
                     question: "",
                     selected: false,
                     accomplished: "No",
@@ -394,7 +395,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//MMU.4.3 Medications prescribed and administered are written in the patient’s record.  
+                {	//MMU.4.3 Medications prescribed and administered are written in the patient’s record.
                     question: "Are medications prescribed or ordered recorded for each patient?",
                     selected: false,
                     accomplished: "No",
@@ -422,7 +423,7 @@
                     personResponsible: ""
                 },
                 {	//Preparing and Dispensing
-                	//MMU.5 Medications are prepared and dispensed in a safe and clean environment. 
+                	//MMU.5 Medications are prepared and dispensed in a safe and clean environment.
                     question: "Are medication prepared and dispensed in clean and safe areas with appropriate medical technology, equipment, and supplies?",
                     selected: false,
                     accomplished: "No",
@@ -449,7 +450,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//MMU.5.1 Medication prescriptions or orders are reviewed for appropriateness. 
+                {	//MMU.5.1 Medication prescriptions or orders are reviewed for appropriateness.
                     question: "Does the hospital define the patient-specific information required for an effective review process, and the source or availability of this information is available at all times when the pharmacy is open or closed?",
                     selected: false,
                     accomplished: "No",
@@ -503,7 +504,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//MMU.5.2 A system is used to dispense medications in the right dose to the right patient at the right time. 
+                {	//MMU.5.2 A system is used to dispense medications in the right dose to the right patient at the right time.
                     question: "s there a uniform medication dispensing and distribution system in the hospital?",
                     selected: false,
                     accomplished: "No",
@@ -540,7 +541,7 @@
                     personResponsible: ""
                 },
                 {	//Administration
-                	//MMU.6 The hospital identifies those qualified individuals permitted to administer medications. 
+                	//MMU.6 The hospital identifies those qualified individuals permitted to administer medications.
                     question: "Does the hospital identify those individuals, by job description or the privileging process, authorized to administer medications?",
                     selected: false,
                     accomplished: "No",
@@ -567,7 +568,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//MMU.6.1 Medication administration includes a process to verify the medication is correct based on the medication prescription or order. 
+                {	//MMU.6.1 Medication administration includes a process to verify the medication is correct based on the medication prescription or order.
                     question: "Are medications verified with the prescription or order?",
                     selected: false,
                     accomplished: "No",
@@ -612,7 +613,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//MMU.6.2 Policies and procedures govern medications brought into the organization for the patient self-administration or as samples. 
+                {	//MMU.6.2 Policies and procedures govern medications brought into the organization for the patient self-administration or as samples.
                     question: "Does the hospital establish and implement a process to govern patient self-administration of medication?",
                     selected: false,
                     accomplished: "No",
@@ -640,7 +641,7 @@
                     personResponsible: ""
                 },
                 {	//Monitoring
-                	//MMU.7 Medication effects on patients are monitored. 
+                	//MMU.7 Medication effects on patients are monitored.
                     question: "Are medications effects on patients monitored?",
                     selected: false,
                     accomplished: "No",

@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "Access to Care and Continuity of Care",
             code: "acc",
+            selected: false,
             data: [
                 {
                     question: "Based on the results of screening, is it determined if the needs of the patient match the hospital’s mission and resources?",

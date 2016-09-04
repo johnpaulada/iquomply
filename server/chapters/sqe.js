@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "Staff Qualifications and Education",
             code: "sqe",
+            selected: false,
             data: [
                 {	//Planning
                 	//SQE.1 Leaders of hospital departments and services define the desired education, skills, knowledge, and other requirements of all staff members.
@@ -31,7 +32,7 @@
                     actions: "",
                     completionDate: new Date(),
                     personResponsible: ""
-                }, 
+                },
                 {	//SQE.1.1 Each staff member's responsibilities are defined in a current job description.
                     question: "Does each staff member not permitted to practice independently have a job description?",
                     selected: false,
@@ -49,7 +50,7 @@
                     actions: "",
                     completionDate: new Date(),
                     personResponsible: ""
-                },  
+                },
                 {
                     question: "Are job descriptions current according to hospital policy?",
                     selected: false,
@@ -140,7 +141,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//SQE.4 The hospital uses a defined process to ensure that nonclinical staff knowledge and skills are consistent with hospital needs and the requirements of the position. 
+                {	//SQE.4 The hospital uses a defined process to ensure that nonclinical staff knowledge and skills are consistent with hospital needs and the requirements of the position.
                     question: "Does the hospital use a defined process to match nonclinical staff knowledge and skills with the requirements of the position?",
                     selected: false,
                     accomplished: "No",
@@ -185,7 +186,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//SQE.5 There is documented personnel information for each staff member. 
+                {	//SQE.5 There is documented personnel information for each staff member.
                     question: "Are personnel files for each staff member standardized and current and maintained according to hospital policy?",
                     selected: false,
                     accomplished: "No",
@@ -239,7 +240,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//SQE.6 A staffing strategy for the hospital, developed by the leaders of hospital departments and services, identifies the number, types and desired qualifications of staff. 
+                {	//SQE.6 A staffing strategy for the hospital, developed by the leaders of hospital departments and services, identifies the number, types and desired qualifications of staff.
                     question: "Do the hospital’s department/ service leaders develop a written strategy for staffing the hospital in a manner that complies with local laws and regulations?",
                     selected: false,
                     accomplished: "No",
@@ -538,7 +539,7 @@
                     personResponsible: ""
                 },
                 {	//The Assignment of Medical Staff Clinical Privileges
-                	//SQE.10 The hospital has a standardized objective, evidence-based procedure to authorize medical staff members to admit and to treat patients and/or to provide other clinical services consistent with their qualifications. 
+                	//SQE.10 The hospital has a standardized objective, evidence-based procedure to authorize medical staff members to admit and to treat patients and/or to provide other clinical services consistent with their qualifications.
                     question: "Does the privilege delineation process used by the hospital meet criteria a) through e) a) is standardized, objective, and evidence-based; b) is documented in hospital policies; c) is active and ongoing as the credentials of medical staff members change; d) is followed for all classes of medical staff membership; and e) can be demonstrated as to how the procedure is used effectively.",
                     selected: false,
                     accomplished: "No",
@@ -803,7 +804,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {	//SQE.16 The hospital has a uniform process to identify job responsibilities and to make clinical work assignments based on other health professional staff members’ credentials and any regulatory requirements. 
+                {	//SQE.16 The hospital has a uniform process to identify job responsibilities and to make clinical work assignments based on other health professional staff members’ credentials and any regulatory requirements.
                     question: "Are licensure, education, training, and experience of other health professional staff members used to made clinical work assignments?",
                     selected: false,
                     accomplished: "No",

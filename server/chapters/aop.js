@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "Assesments of Patients",
             code: "aop",
+            selected: false,
             data: [
                 {
                     question: "Is the minimum content of assessments for inpatients defined for each clinical discipline that performs assessments and specifies the required elements of the history and physical examination?",

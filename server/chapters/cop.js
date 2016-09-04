@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "Care of Patients",
             code: "cop",
+            selected: false,
             data: [
                 {
                     question: "Do the hospital’s department/ service leaders collaborate to provide uniform care processes? ",

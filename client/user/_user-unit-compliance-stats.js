@@ -34,15 +34,21 @@ Template.userUnitComplianceStats.helpers({
     },
 
     unitCompliancePercentage: function() {
-        var stats = Template.instance().unitComplianceStats.get();
+        var stats   = Template.instance().unitComplianceStats.get();
+        var percent = stats.yes / stats.total * 100;
 
-        return stats.yes / stats.total * 100 + '%';
+
+        return RoundOffer.roundOffToPlace(percent, 2) + '%';
     },
 
     unitVerbalCompliance: function() {
         var stats = Template.instance().unitComplianceStats.get();
 
         return ComplianceVerbalProgressGenerator.generate(stats.yes / stats.total * 100);
+    },
+
+    unit: function() {
+        return Meteor.users.findOne(Meteor.userId()).unit;
     }
 });
 

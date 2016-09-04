@@ -34,9 +34,10 @@ Template.globalUnitComplianceChart.helpers({
     },
 
     dataPercentage: function() {
-        var stats = Template.instance().unitComplianceStats.get();
+        var stats   = Template.instance().unitComplianceStats.get();
+        var percent = stats.yes / stats.total * 100;
 
-        return stats.yes / stats.total * 100 + '%';
+        return RoundOffer.roundOffToPlace(percent, 2) + '%';
     },
 
     dataCompliance: function() {

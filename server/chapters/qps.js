@@ -3,9 +3,10 @@
         Chapters.insert({
             name: "Quality Improvement and Patient Safety",
             code: "qps",
+            selected: false,
             data: [
                 {   //Management of Quality and Patient Safety Activities
-                    //QPS.1 A qualified individual guides the implementation of the hospital’s program for quality improvement and patient safety and manages the activities needed to carry out an effective program of continuous quality improvement and patient safety within the hospital. 
+                    //QPS.1 A qualified individual guides the implementation of the hospital’s program for quality improvement and patient safety and manages the activities needed to carry out an effective program of continuous quality improvement and patient safety within the hospital.
                     question: "Is an individual(s) who is experienced in the methods and processes of improvement selected to guide the implementation of the hospital’s quality and patient safety program?",
                     selected: false,
                     accomplished: "No",
@@ -50,7 +51,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //Measure Selection and Data Collection 
+                {   //Measure Selection and Data Collection
                     //QPS.2 Quality and patient safety program staff support the measure selection process throughout the hospital and provide coordination and integration of measurement activities throughout the hospital.
                     question: "Does quality and patient safety program support the selection of measures throughout the hospital at the hospitalwide level and at the hospital department or service level?",
                     selected: false,
@@ -178,7 +179,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //QPS.4.1 Individuals with appropriate experience, knowledge, and skills systematically aggregate and analyze data in the hospital. 
+                {   //QPS.4.1 Individuals with appropriate experience, knowledge, and skills systematically aggregate and analyze data in the hospital.
                     question: "Are data aggregated, analyzed, and transformed into useful information to identify opportunities for improvement?",
                     selected: false,
                     accomplished: "No",
@@ -232,7 +233,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //QPS.5 The data analysis process includes at least one determination per year of the impact of hospitalwide priority improvements on cost and efficiency. 
+                {   //QPS.5 The data analysis process includes at least one determination per year of the impact of hospitalwide priority improvements on cost and efficiency.
                     question: "Are data on the amount and type of resource use collected on at least one hospitalwide priority improvement project per year before and following the improvement?",
                     selected: false,
                     accomplished: "No",
@@ -259,7 +260,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //QPS.6 The hospital uses an internal process to validate data. 
+                {   //QPS.6 The hospital uses an internal process to validate data.
                     question: "Is data validation use by the quality program as a component of the improvement process selected by leadership?",
                     selected: false,
                     accomplished: "No",
@@ -295,7 +296,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //QPS.7 The hospital uses a defined process for identifying and managing sentinel events. 
+                {   //QPS.7 The hospital uses a defined process for identifying and managing sentinel events.
                     question: "Has the Hospital leadership established a definition of a sentinel event that at least includes a) through f) found in the intent? a) all confirmed transfusion reactions, if applicable to the hospital.; b)	all serious adverse drug events, if applicable and as defined by the hospital; c)	all significant medication errors, if applicable and as defined by the hospital; d)	all major discrepancies between preoperative and postoperative diagnoses; e)	adverse event or patterns of adverse events during moderate or deep sedation and anesthesia use; f)	other adverse events,; for example health care-associated infections and infectious disease outbreaks.",
                     selected: false,
                     accomplished: "No",
@@ -422,7 +423,7 @@
                     personResponsible: ""
                 },
                 {   //Gaining and Sustaining Improvement
-                    //QPS.10 Improvement in quality and safety is achieved and sustained. 
+                    //QPS.10 Improvement in quality and safety is achieved and sustained.
                     question: "Are the improvements in quality and patient safety planned, tested, and implemented?",
                     selected: false,
                     accomplished: "No",

@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "Human Subjects Research Program",
             code: "hrp",
+            selected: false,
             data: [
                  {
                     question: "Does hospital leadership establish and promote a code of ethical professional behavior?",

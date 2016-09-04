@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "Care of Patients",
             code: "cop",
+            selected: false,
             data: [
                 {
                     question: "Does hospital leadership and those responsible for facility management know what laws, regulations, and other requirements apply to the hospital’s facilities?",

@@ -3,8 +3,9 @@
         Chapters.insert({
             name: "Prevention and Control of Infection",
             code: "pci",
+            selected: false,
             data: [
-                {   //PCI.1 One or more individuals oversee all infection prevention and control activities. This individual(s) is qualified in infection prevention and control practices through education, training, experience, or certification. 
+                {   //PCI.1 One or more individuals oversee all infection prevention and control activities. This individual(s) is qualified in infection prevention and control practices through education, training, experience, or certification.
                     question: "Do one or more individuals oversee the infection prevention and control program?",
                     selected: false,
                     accomplished: "No",
@@ -31,7 +32,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //PCI.2 There is a designated coordination mechanism for all infection prevention and control activities that involves physicians, nurses, and others based on the size and complexity of the hospital. 
+                {   //PCI.2 There is a designated coordination mechanism for all infection prevention and control activities that involves physicians, nurses, and others based on the size and complexity of the hospital.
                     question: "Is there a designated mechanism for the coordination of the infection prevention and control program? ",
                     selected: false,
                     accomplished: "No",
@@ -58,7 +59,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //PCI.3 The infection prevention and control program is based on current scientific knowledge, accepted practice guidelines, and applicable law and regulations, and standards for sanitation and cleanliness. 
+                {   //PCI.3 The infection prevention and control program is based on current scientific knowledge, accepted practice guidelines, and applicable law and regulations, and standards for sanitation and cleanliness.
                     question: "Is the infection prevention and control program based on current scientific knowledge accepted practice guidelines, and local laws and regulations?",
                     selected: false,
                     accomplished: "No",
@@ -94,7 +95,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //PCI.4 Hospital leadership provides resources to support the infection prevention and control program. 
+                {   //PCI.4 Hospital leadership provides resources to support the infection prevention and control program.
                     question: "Is the infection prevention and control program staffed according to the hospital’s size, complexity of activities, and level of risks, as well as the program’s scope?",
                     selected: false,
                     accomplished: "No",
@@ -121,7 +122,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //PCI.5 The hospital designs and implements a comprehensive program to reduce the risks of health care-associated infections in patients and health care workers. 
+                {   //PCI.5 The hospital designs and implements a comprehensive program to reduce the risks of health care-associated infections in patients and health care workers.
                     question: "Is there a comprehensive program that crosses all levels of the hospital, to reduce the risk of health care-associated infections in patients?",
                     selected: false,
                     accomplished: "No",
@@ -166,7 +167,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //PCI.5.1 All patient, staff, and visitor areas of the hospital are included in the infection prevention and control program. 
+                {   //PCI.5.1 All patient, staff, and visitor areas of the hospital are included in the infection prevention and control program.
                     question: "Are all patient care areas of the hospital included in the infection prevention and control program? ",
                     selected: false,
                     accomplished: "No",
@@ -193,7 +194,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //PCI.6 The hospital uses a risk-based approach in establishing the focus of the health care–associated infection prevention and reduction program. 
+                {   //PCI.6 The hospital uses a risk-based approach in establishing the focus of the health care–associated infection prevention and reduction program.
                     question: "Has the hospital established the focus of the program through the collection of data related to a) through f)? a) Respiratory tract—such as the procedures and equipment associated with intubation, mechanical ventilator support, tracheostomy, and so on; b) Urinary tract—such as the invasive procedures and medical            technology  associated with indwelling urinary catheters, urinary  drainage systems, their care, and so on; c) Intravascular invasive devices—such as the insertion and care of central venous catheters, peripheral venous lines, and so on; d) Surgical sites—such as their care and type of dressing and associated aseptic procedures; e) Epidemiologically significant diseases and organisms—multidrug – resistant organisms, highly virulent infections; f) Emerging or reemerging infections with the community.",
                     selected: false,
                     accomplished: "No",
@@ -274,7 +275,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //PCI.7.1 The hospital reduces the risk of infections by ensuring adequate medical technology cleaning and sterilization and the proper management of laundry and linen. 
+                {   //PCI.7.1 The hospital reduces the risk of infections by ensuring adequate medical technology cleaning and sterilization and the proper management of laundry and linen.
                     question: "Do methods for medical technology cleaning, disinfection, and sterilization address the principles of infection prevention and control?",
                     selected: false,
                     accomplished: "No",
@@ -328,7 +329,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //PCI.7.2 The hospital reduces the risk of infections through proper disposal of waste. 
+                {   //PCI.7.2 The hospital reduces the risk of infections through proper disposal of waste.
                     question: "Is disposal of infectious waste and body fluids managed to minimize infection transmission risk? ",
                     selected: false,
                     accomplished: "No",
@@ -409,7 +410,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //PCI.7.5 The hospital reduces the risk of infection in the facility associated with mechanical and engineering controls and during demolition, construction and renovation. 
+                {   //PCI.7.5 The hospital reduces the risk of infection in the facility associated with mechanical and engineering controls and during demolition, construction and renovation.
                     question: "Are engineering controls implemented to minimize infection risk in the hospital?",
                     selected: false,
                     accomplished: "No",
@@ -436,7 +437,7 @@
                     completionDate: new Date(),
                     personResponsible: ""
                 },
-                {   //PCI.8 The hospital provides barrier precautions and isolation procedures that protect patients, visitors, and staff from communicable diseases and protects immunosuppressed patients from acquiring infections to which they are uniquely prone. 
+                {   //PCI.8 The hospital provides barrier precautions and isolation procedures that protect patients, visitors, and staff from communicable diseases and protects immunosuppressed patients from acquiring infections to which they are uniquely prone.
                     question: "Are patients with known or suspected contagious diseases isolated in accordance with recommended guidelines?",
                     selected: false,
                     accomplished: "No",

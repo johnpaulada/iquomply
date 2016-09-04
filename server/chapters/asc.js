@@ -3,6 +3,7 @@
         Chapters.insert({
             name: "Anesthesia and Surgery Care",
             code: "asc",
+            selected: false,
             data: [
                 {
                     question: "Do sedation and anesthesia services meet professional standards and applicable local and national standards, laws, and regulations?  ",
