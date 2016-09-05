@@ -1,0 +1,7 @@
+.active-card {
+    margin-top: 2em;
+}
+
+.inactive-card {
+    margin-bottom: -3em;
+}

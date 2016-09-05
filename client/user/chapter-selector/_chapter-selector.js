@@ -26,6 +26,10 @@ Template.chapterSelector.helpers({
     selectedOpacity: function(selected) {
         return selected ? '' : 'disabled';
     },
+
+    selectedCardClass: function(selected) {
+        return selected ? 'active-card' : 'card-plain inactive-card';
+    }
 });
 
 Template.chapterSelector.events({

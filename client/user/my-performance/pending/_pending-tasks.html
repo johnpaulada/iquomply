@@ -1,0 +1,32 @@
+<template name="pendingTasks">
+    <h3>Pending Tasks</h3>
+    <div class="">
+        <a class="btn btn-warning btn-block" href="/user-dashboard">Edit in MyCompliance</a>
+    </div>
+    {{#if Template.subscriptionsReady}}
+        {{#if progress}}
+            {{#each progress}}
+                {{#if selected}}
+                    {{#if hasPending}}
+                        <div class="card {{ hasPendingClass }}" style="margin-top: 3em;">
+                            <h4 class="header header-info">
+                                {{ name }}
+                            </h4>
+                            <div class="content">
+                                <ul class="list-group">
+                                    {{#each data}}
+                                        {{#if selected}}
+                                            {{#if isPending}}
+                                                <li class="list-group-item">{{ question }}</li>
+                                            {{/if}}
+                                        {{/if}}
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        {{/if}}
+    {{/if}}
+</template>

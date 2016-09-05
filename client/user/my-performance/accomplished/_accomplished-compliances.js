@@ -17,8 +17,26 @@ Template.accomplishedCompliances.onCreated(function() {
 
 Template.accomplishedCompliances.helpers({
     progress() {
-        console.log(Template.instance().currentProgress());
-
         return Template.instance().currentProgress();
+    },
+
+    hasAccomplished() {
+        return _.some(this.data, function(val) {
+            if (val.selected) {
+                return val.accomplished === 'Yes';
+            }
+
+            return false;
+        });
+    },
+
+    hasAccomplishedClass() {
+        return _.some(this.data, function(val) {
+            return val.accomplished === 'Yes';
+        }) ? '' : 'card-plain';
+    },
+
+    isAccomplished() {
+        return this.accomplished === 'Yes';
     }
 });

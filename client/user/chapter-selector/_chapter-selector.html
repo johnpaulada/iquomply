@@ -6,24 +6,24 @@
                     <h2>Chapter Selector</h2>
                     {{#if Template.subscriptionsReady}}
                         {{#each chapters}}
-                            <div class="card" style="margin-bottom: 1em;">
+                            <div class="card {{selectedCardClass selected}}">
                                 <h3 class="header" style="padding: 15px 20px;">
                                     <input type="checkbox" class="chapter" name="chapter-{{@index}}" {{selectedBox selected}}>
                                     <span class="{{!--selectedOpacity selected--}}">{{name}}</span>
                                 </h3>
-                                <div class="content">
-                                    {{#if selected}}
+                                {{#if selected}}
+                                    <div class="content">
                                         {{#each data}}
                                             <p>
                                                 <input type="checkbox" class="question" name="question-{{@index}}" {{selectedBox selected}}>
                                                 <span>{{question}}</span>
                                             </p>
                                         {{/each}}
-                                    {{/if}}
-                                </div>
+                                    </div>
+                                {{/if}}
                             </div>
                         {{/each}}
-                        <button id="save-btn" class="btn btn-success" type="button" name="button">Update</button>
+                        <button id="save-btn" class="btn btn-block btn-success" type="button" name="button">Update</button>
                     {{/if}}
                 </div>
             </div>
