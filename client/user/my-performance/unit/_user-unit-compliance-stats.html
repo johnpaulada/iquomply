@@ -3,7 +3,7 @@
         <h3>Unit Compliance Statistics</h3>
         <h4>Name of Unit: {{ unit }}</h4>
         {{#if complianceStats}}
-            {{> chart type="pie" data=unitComplianceChartData}}
+            {{> chart type="pie" data=unitComplianceChartData click=chartClickHandler}}
             <div class="progressbar progressbar-green">
                 <div class="progressbar-inner" style="width: {{unitCompliancePercentage}};"></div>
             </div>

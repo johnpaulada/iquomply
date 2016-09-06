@@ -49,6 +49,10 @@ Template.userUnitComplianceStats.helpers({
 
     unit: function() {
         return Meteor.users.findOne(Meteor.userId()).unit;
+    },
+
+    chartClickHandler() {
+        return handleChartClick;
     }
 });
 
@@ -62,5 +66,19 @@ function updateUnitChartData(instance) {
         unitChartData.datasets[0].data[0] = answers.yes;
         unitChartData.datasets[0].data[1] = answers.no;
         unitChartData.datasets[0].data[2] = answers.partially;
+    }
+}
+
+function handleChartClick(model) {
+    if (model.label === 'Yes') {
+        $('li.active').removeClass('active');
+        $('a[href="#accomplished"]').parent().addClass('active');
+        $('div.active').removeClass('active');
+        $('div#accomplished').addClass('active');
+    } else {
+        $('li.active').removeClass('active');
+        $('a[href="#pending"]').parent().addClass('active');
+        $('div.active').removeClass('active');
+        $('div#pending').addClass('active');
     }
 }
