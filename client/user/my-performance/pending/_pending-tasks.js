@@ -42,5 +42,13 @@ Template.pendingTasks.helpers({
 
     isPending() {
         return this.accomplished !== 'Yes';
+    },
+
+    isNo() {
+        return this.accomplished === 'No';
+    },
+
+    isPartially() {
+        return this.accomplished === 'Partially';
     }
 });
