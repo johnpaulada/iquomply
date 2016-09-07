@@ -32,6 +32,30 @@ Template.pendingTasks.helpers({
         return pending;
     },
 
+    hasNo() {
+        var pending = _.some(this.data, function(val) {
+            if (val.selected) {
+                return val.accomplished === 'No';
+            }
+
+            return false;
+        });
+
+        return pending;
+    },
+
+    hasPartially() {
+        var pending = _.some(this.data, function(val) {
+            if (val.selected) {
+                return val.accomplished === 'Partially';
+            }
+
+            return false;
+        });
+
+        return pending;
+    },
+
     hasPendingClass() {
         var pendingClass =  _.some(this.data, function(val) {
             return val.accomplished !== 'Yes';
