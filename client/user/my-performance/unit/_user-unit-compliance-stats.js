@@ -48,7 +48,7 @@ Template.userUnitComplianceStats.helpers({
     },
 
     unit: function() {
-        return Meteor.users.findOne(Meteor.userId()).unit;
+        return Meteor.users.findOne(Meteor.userId()).profile.unit;
     },
 
     chartClickHandler() {

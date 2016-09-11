@@ -7,6 +7,7 @@ Meteor.methods({
         Reports.insert({
             'userId': this.userId,
             'progress': data,
+            'isRead': false,
             'dateSubmitted': new Date()
         });
 

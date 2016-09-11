@@ -1,91 +1,105 @@
 <template name="userProgressTab">
     <section>
         <div class="main-container">
-            <div class="row">
-                <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                    <h2>MyCompliance</h2>
-                    <h3>Chapters</h3>
-                    {{#if currentProgress}}
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">#</th>
-                                    <th>Code</th>
-                                    <th>Name</th>
-                                    <th class="text-right">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{#each currentProgress}}
-                                    {{#if selected}}
-                                        <tr>
-                                            <td class="id-col text-center">{{@index}}</td>
-                                            <td>{{code}}</td>
-                                            <td>{{name}}</td>
-                                            <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="Edit Chapter" class="btn btn-success btn-simple btn-xs edit-chapter">
-                                                    <i class="fa fa-edit"></i>
-                                                </button>
-                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs remove-chapter">
-                                                    <i class="fa fa-times"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    {{/if}}
-                                {{/each}}
-                            </tbody>
-                        </table>
-                        <button id="submit-btn" class="btn btn-success">Submit</button>
-                    {{else}}
-                        <p>No progress yet.</p>
-                        <button id="start-progress-btn" type="button" class="btn btn-info" name="start-progress">Start Progress</button>
-                    {{/if}}
-                </div>
-            </div>
-            {{#if questionz}}
+            {{#if Template.subscriptionsReady}}
                 <div class="row">
                     <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                        {{#each questionz}}
-                            {{#if selected}}
-                                <div class="item">
-                                    <hr>
-                                    <input type="hidden" name="name" value="{{@index}}">
-
-                                    <h3 class="question-text" style="text-align: left;">{{question}}</h3>
-
-                                    <div class="answers">
-                                        <input type="radio" class="accomplished" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Yes'}}" value="Yes">
-                                    	<label>Yes</label>
-                                        <input type="radio" class="accomplished" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'No'}}" value="No">
-                                    	<label>No</label>
-                                        <input type="radio" class="accomplished" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Partially'}}" value="Partially">
-                                    	<label>Partially</label>
-
-                                        <br>
-                                        {{#if (equalString accomplished 'Yes')}}
-                                            <div class="form-group">
-                                                <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
-                                            </div>
+                        <h2>MyCompliance</h2>
+                        <h3>Chapters</h3>
+                        {{#if currentProgress}}
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th>Code</th>
+                                        <th>Name</th>
+                                        <th class="text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each currentProgress}}
+                                        {{#if selected}}
+                                            <tr>
+                                                <td class="id-col text-center">{{@index}}</td>
+                                                <td>{{code}}</td>
+                                                <td>{{name}}</td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" title="Edit Chapter" class="btn btn-success btn-simple btn-xs edit-chapter">
+                                                        <i class="fa fa-edit"></i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs remove-chapter">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
                                         {{/if}}
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                            <button id="submit-btn" class="btn btn-success">Submit</button>
+                        {{else}}
+                            <p>No progress yet.</p>
+                            <button id="start-progress-btn" type="button" class="btn btn-info" name="start-progress">Start Progress</button>
+                        {{/if}}
+                    </div>
+                </div>
+                {{#if questionz}}
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                            {{#each questionz}}
+                                {{#if selected}}
+                                    <div class="item">
+                                        <hr>
+                                        <input type="hidden" name="name" value="{{@index}}">
 
-                                        {{#if (or (equalString accomplished 'No') (equalString accomplished 'Partially'))}}
+                                        <h3 class="question-text" style="text-align: left;">{{question}}</h3>
+
+                                        <div class="answers">
+                                            <input type="radio" class="accomplished" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Yes'}}" value="Yes">
+                                        	<label>Yes</label>
+                                            <input type="radio" class="accomplished" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'No'}}" value="No">
+                                        	<label>No</label>
+                                            <input type="radio" class="accomplished" name="accomplished-{{@index}}" checked="{{accomplishedClass accomplished 'Partially'}}" value="Partially">
+                                        	<label>Partially</label>
+
+                                            <br>
+                                            {{#if (equalString accomplished 'Yes')}}
+                                                <div class="form-group">
+                                                    <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
+                                                </div>
+                                            {{/if}}
+
+                                            {{#if (or (equalString accomplished 'No') (equalString accomplished 'Partially'))}}
+                                                <div class="form-group">
+                                                    <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{actions}}"></textarea>
+                                                </div>
+                                            {{/if}}
+
                                             <div class="form-group">
-                                                <textarea class="form-control label-floating actions" placeholder="Actions Needed" rows="2" value="{{actions}}"></textarea>
+                                                <input type="email" class="form-control" placeholder="Person Responsible">
                                             </div>
-                                        {{/if}}
-
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Person Responsible">
-                                        </div>
-                                        <div class="form-group label-floating">
-                                            <input type="date" class="form-control" placeholder="Date Completed">
+                                            <div class="form-group label-floating">
+                                                <input type="date" class="form-control" placeholder="Date Completed">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            {{/if}}
-                        {{/each}}
-                        <button id="save-btn" class="btn btn-success">Save</button>
+                                {{/if}}
+                            {{/each}}
+                            <button id="save-btn" class="btn btn-success">Save</button>
+                        </div>
                     </div>
+                {{/if}}
+            {{else}}
+                <div class="sk-cube-grid">
+                    <div class="sk-cube sk-cube1"></div>
+                    <div class="sk-cube sk-cube2"></div>
+                    <div class="sk-cube sk-cube3"></div>
+                    <div class="sk-cube sk-cube4"></div>
+                    <div class="sk-cube sk-cube5"></div>
+                    <div class="sk-cube sk-cube6"></div>
+                    <div class="sk-cube sk-cube7"></div>
+                    <div class="sk-cube sk-cube8"></div>
+                    <div class="sk-cube sk-cube9"></div>
                 </div>
             {{/if}}
         </div>

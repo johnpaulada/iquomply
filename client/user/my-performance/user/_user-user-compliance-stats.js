@@ -45,7 +45,11 @@ Template.userUserComplianceStats.helpers({
         var stats = Template.instance().userComplianceStats.get();
 
         return ComplianceVerbalProgressGenerator.generate(stats.yes / stats.total * 100);
-    }
+    },
+
+    unit: function() {
+        return Meteor.users.findOne(Meteor.userId()).profile.unit;
+    },
 });
 
 function updateUserChartData(instance) {

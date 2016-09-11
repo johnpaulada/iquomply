@@ -20,7 +20,7 @@ Template.changePasswordBody.events({
                         if (Roles.userIsInRole(Meteor.userId(), ['admin', 'super-admin'])) {
                             Router.go('/admin-dashboard');
                         } else {
-                            Router.go('/user-dashboard');
+                            Router.go('/user-dashboard/chapter-selector');
                         }
                     }
                 });
