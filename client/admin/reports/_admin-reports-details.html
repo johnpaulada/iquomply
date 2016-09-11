@@ -1,0 +1,63 @@
+<template name="adminReportsDetails">
+    <div class="card card-nav-tabs">
+        <div class="header header-success">
+            <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <ul class="nav nav-tabs" data-tabs="tabs">
+                        <li class="active">
+                            <a href="#statistics" data-toggle="tab">
+                                Statistics
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#analytics" data-toggle="tab">
+                                Analytics
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#compliance" data-toggle="tab">
+                                Compliance Sheets
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{#if Template.subscriptionsReady}}
+            <div class="content">
+                <div class="tab-content text-center">
+                    <div class="tab-pane active" id="statistics">
+                        {{> adminReportsStatistics}}
+                    </div>
+                    <div class="tab-pane" id="analytics">
+                        Cupcake ipsum dolor. Sit amet pie lollipop topping candy jelly lollipop toffee. Bonbon chocolate bar tootsie roll jelly-o gummi bears chocolate cake carrot cake caramels jelly-o.
+    Caramels cake pastry apple pie danish. Powder cupcake chocolate bar. Muffin gingerbread sugar plum.
+    Macaroon jelly-o powder gummi bears. Sweet roll cheesecake cookie jelly-o cheesecake danish. Carrot cake jelly-o candy canes fruitcake cookie.
+    Sesame snaps fruitcake jujubes brownie macaroon jelly-o liquorice. Topping chocolate donut ice cream cotton candy bonbon chocolate cake cake. Halvah sweet roll sugar plum wafer marzipan.
+    Candy croissant jujubes jelly beans pudding sugar plum powder macaroon macaroon. Marzipan powder topping lollipop halvah jelly beans sweet dessert cheesecake. Lollipop jelly-o marzipan tootsie roll muffin apple pie fruitcake sugar plum halvah.
+                    </div>
+                    <div class="tab-pane" id="compliance">
+                        Cupcake ipsum dolor. Sit amet donut liquorice. Candy canes sesame snaps jelly beans sweet chocolate.
+    Dessert bear claw dessert liquorice oat cake. Chocolate sweet roll jelly beans jelly beans pie fruitcake. Sugar plum biscuit oat cake tootsie roll danish toffee toffee dessert. Chocolate candy canes ice cream brownie.
+    Pie biscuit cake. Tootsie roll lemon drops chocolate bar cake brownie jujubes marzipan. Carrot cake croissant macaroon. Cupcake marzipan jelly beans powder danish dragée jelly gingerbread.
+    Dessert bonbon liquorice pastry caramels croissant caramels dessert cake. Muffin marzipan sugar plum cupcake cheesecake tart sesame snaps cake croissant. Macaroon wafer cheesecake brownie. Sugar plum jelly-o dessert soufflé cheesecake gummi bears sugar plum.
+    Cookie jelly beans tiramisu muffin. Sweet cheesecake sweet sugar plum bonbon tootsie roll gummies sugar plum. Cotton candy biscuit jelly croissant marzipan liquorice. Chupa chups cake gummies jelly.
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
+        {{/if}}
+    </div>
+</template>
