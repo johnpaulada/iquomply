@@ -1,6 +1,11 @@
 <template name="adminReportsStatistics">
     {{#if unitShouldLoad}}
         <div class="row">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Unit: <em>{{unit}}</em></h3>
+                </div>
+            </div>
             <div class="col-lg-6 col-sm-12">
                 <h3>Unit Statistics</h3>
                 {{> chart type="pie" data=unitComplianceChartData}}

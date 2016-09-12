@@ -4,6 +4,9 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12">
                     <h2>Reports</h2>
+                    {{#if isDetailDisplayed}}
+                        <a href="#" class="btn btn-info back-btn">Back</a>
+                    {{/if}}
                     {{#if Template.subscriptionsReady}}
                         {{#if isListDisplayed}}
                             {{#if reports}}
@@ -22,7 +25,7 @@
                                                 <td class="id-col invisible">{{@index}}</td>
                                                 {{#with (getUser userId)}}
                                                     <td class="text-center">{{profile.firstName}} {{profile.lastName}}</td>
-                                                    <td class="text-center">{{profile.unit}}</td>
+                                                    <td class="unit-col text-center">{{profile.unit}}</td>
                                                 {{/with}}
                                                 <td class="text-center">{{getDate dateSubmitted}}</td>
                                                 <td class="td-actions text-right">
@@ -39,7 +42,7 @@
                             {{/if}}
                         {{/if}}
                         {{#if isDetailDisplayed}}
-                            {{> adminReportsDetails details=getDetails}}
+                            {{> adminReportsDetails details=getDetails unit=unit}}
                         {{/if}}
                     {{else}}
                         <!-- <div class="sk-folding-cube">
