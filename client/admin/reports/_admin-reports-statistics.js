@@ -23,29 +23,15 @@ Template.adminReportsStatistics.helpers({
 });
 
 Template.adminReportsStatistics.onRendered(function() {
-    {
-        let details       = this.data.details;
-        let answers       = AnswerCounter.count(details.progress);
-        let unitChartData = Template.instance().unitChartData.get();
+    let details       = this.data.details;
+    let answers       = AnswerCounter.count(details.progress);
+    let unitChartData = Template.instance().unitChartData.get();
+    let userChartData = Template.instance().userChartData.get();
 
-        unitChartData.datasets[0].data[0] = answers.yes;
-        unitChartData.datasets[0].data[1] = answers.no;
-        unitChartData.datasets[0].data[2] = answers.partially;
+    unitChartData.datasets[0].data = [answers.yes, answers.no, answers.partially];
+    userChartData.datasets[0].data = [answers.yes, answers.no + answers.partially];
 
-        Template.instance().unitChartData.set(unitChartData);
-    }
-
-    {
-        let details       = this.data.details;
-        let answers       = AnswerCounter.count(details.progress);
-        let userChartData = Template.instance().userChartData.get();
-
-        userChartData.datasets[0].data[0] = answers.yes;
-        userChartData.datasets[0].data[1] = answers.no;
-        userChartData.datasets[0].data[2] = answers.partially;
-
-        Template.instance().userChartData.set(userChartData);
-    }
-
+    Template.instance().unitChartData.set(unitChartData);
+    Template.instance().userChartData.set(userChartData);
     Template.instance().unitShouldLoad.set(true);
 });
