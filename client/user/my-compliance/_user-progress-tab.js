@@ -122,6 +122,10 @@ Template.userProgressTab.events({
         Meteor.call('progress.update', form);
     },
 
+    'change input[type="radio"]': function(event, instance) {
+        saveChapter(instance);
+    },
+
     'click #save-btn': function(event, instance) {
         saveChapter(instance);
         swal('Nice!', 'Successfully saved your progress!', 'success');
