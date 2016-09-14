@@ -63,7 +63,8 @@
                                         	<label>Partially</label>
 
                                             <br>
-                                            {{#if (equalString accomplished 'Yes')}}
+                                            
+                                            {{#if (or (equalString accomplished 'Yes') (equalString accomplished 'Partially'))}}
                                                 <div class="form-group">
                                                     <textarea class="form-control label-floating evidence" placeholder="Evidence of Performance" rows="2" value="{{evidence}}"></textarea>
                                                 </div>
