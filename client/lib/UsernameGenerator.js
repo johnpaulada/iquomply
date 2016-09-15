@@ -8,12 +8,13 @@ UsernameGenerator = {
      *
      * @returns {string} the generated username.
      */
-    generate(firstName, lastName, birthdate) {
+    generate(firstName, middleName, lastName, birthdate) {
         var dateArray = birthdate.split('-');
 
-        firstName = Acronymizer.acronymize(firstName);
-        lastName  = Acronymizer.acronymize(lastName);
+        firstName   = Acronymizer.acronymize(firstName);
+        middleName  = Acronymizer.acronymize(middleName);
+        lastName    = Acronymizer.acronymize(lastName);
 
-        return firstName + lastName + dateArray[1] + dateArray[2] + dateArray[0].substring(2, 4);
+        return firstName + middleName + lastName + dateArray[1] + dateArray[2] + dateArray[0].substring(2, 4);
     }
 }

@@ -17,7 +17,7 @@ Template.signupBody.events({
         var errors = SignupValidator.getErrors(formInput);
 
         if (errors.length == 0) {
-            formInput.username  = UsernameGenerator.generate(formInput.firstName, formInput.lastName, formInput.birthdate);
+            formInput.username  = UsernameGenerator.generate(formInput.firstName, formInput.middleName, formInput.lastName, formInput.birthdate);
             formInput.password  = chance.hash({
                 length: 10,
                 casing: 'upper'
