@@ -18,10 +18,7 @@ Template.signupBody.events({
 
         if (errors.length == 0) {
             formInput.username  = UsernameGenerator.generate(formInput.firstName, formInput.middleName, formInput.lastName, formInput.birthdate);
-            formInput.password  = chance.hash({
-                length: 10,
-                casing: 'upper'
-            });
+            formInput.password  = chance.string({length: 10});
 
             Meteor.call('user.create', formInput, function(error, result) {
                 if (error) {
