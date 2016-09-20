@@ -24,97 +24,88 @@
                                     - or be classical -
                                 </p>
                                 <div class="content">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-user"></i>
-                                        </span>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control first-name-input" placeholder="First Name">
+                                    {{#if Template.subscriptionsReady}}
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control first-name-input" placeholder="First Name">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-user"></i>
-                                        </span>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control middle-name-input" placeholder="Middle Name">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control middle-name-input" placeholder="Middle Name">
+                                            </div>
+                                            </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control last-name-input" placeholder="Last Name">
+                                            </div>
                                         </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-date"></i>
+                                            </span>
+                                            <div class="form-group">
+                                                <label class="control-label">Birthdate</label>
+                                                <input type="date" class="form-control birthdate-input" placeholder="Birthdate">
+                                            </div>
                                         </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-user"></i>
-                                        </span>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control last-name-input" placeholder="Last Name">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-phone"></i>
+                                            </span>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control contact-input" placeholder="Contact Number" data-toggle="tooltip" data-placement="right" title="Contact Number must be of the form 09xxxxxxxxx or +639xxxxxxxxx">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-date"></i>
-                                        </span>
-                                        <div class="form-group">
-                                            <label class="control-label">Birthdate</label>
-                                            <input type="date" class="form-control birthdate-input" placeholder="Birthdate">
+                                        {{#if displayUnits}}
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-user-secret"></i>
+                                                </span>
+                                                <div class="form-group">
+                                                    <label class="control-label" for="unit-input">Unit:</label>
+                                                    <select class="form-control uis" id="unit-input">
+                                                        {{#each units}}
+                                                            <option value="{{name}}">{{name}}</option>
+                                                        {{/each}}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        {{/if}}
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user-secret"></i>
+                                            </span>
+                                            <div class="form-group">
+                                                <label class="control-label" for="user-type-input">User Level:</label>
+                                                <select class="form-control uis" id="user-type-input">
+                                                    <option value="user">User</option>
+                                                    <option value="admin">Admin</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-phone"></i>
-                                        </span>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control contact-input" placeholder="Contact Number" data-toggle="tooltip" data-placement="right" title="Contact Number must be of the form 09xxxxxxxxx or +639xxxxxxxxx">
+                                    {{else}}
+                                        <div class="sk-cube-grid">
+                                            <div class="sk-cube sk-cube1"></div>
+                                            <div class="sk-cube sk-cube2"></div>
+                                            <div class="sk-cube sk-cube3"></div>
+                                            <div class="sk-cube sk-cube4"></div>
+                                            <div class="sk-cube sk-cube5"></div>
+                                            <div class="sk-cube sk-cube6"></div>
+                                            <div class="sk-cube sk-cube7"></div>
+                                            <div class="sk-cube sk-cube8"></div>
+                                            <div class="sk-cube sk-cube9"></div>
                                         </div>
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-user-secret"></i>
-                                        </span>
-                                        <div class="form-group">
-                                            <label class="control-label" for="unit-input">Unit:</label>
-                                            <select class="form-control uis" id="unit-input">
-                                                <option value="test1">Test1</option>
-                                                <option value="test2">Test2</option>
-                                                <option value="Medical Quality and Safety Office/Medical Education Office">Medical Quality and Safety Office/Medical</option>
-                                                <option value="Education Office">Education Office</option>
-                                                <option value="Geriatric Doctor's Office">Geriatric Doctor's Office</option>
-                                                <option value="Infection Control Office">Infection Control Office</option>
-                                                <option value="Department of Otorhinolaryngology (ENT Doctor's Office)">Department of Otorhinolaryngology (ENT Doctor's Office)</option>
-                                                <option value="Ophthalmology Doctor's Office/ Conf. Room">Ophthalmology Doctor's Office/ Conf. Room</option>
-                                                <option value="Department of Anesthesiology (Conference Room)">Department of Anesthesiology (Conference Room)</option>
-                                                <option value="OB-Gyne Doctor's Office">OB-Gyne Doctor's Office</option>
-                                                <option value="Orthopedic Institute Office">Orthopedic Institute Office</option>
-                                                <option value="Department of Medicine (Doctor's Office &amp; Conf. Room)">Department of Medicine (Doctor's Office &amp; Conf. Room)</option>
-                                                <option value="Section of Nephrology Office">Section of Nephrology Office</option>
-                                                <option value="Heart Institute (HI) Doctor's Office/ Heart Room">Heart Institute (HI) Doctor's Office/ Heart Room</option>
-                                                <option value="Cancer Doctor's Office/ Conf. Room">Cancer Doctor's Office/ Conf. Room</option>
-                                                <option value="Medical Records Management Department">Medical Records Management Department</option>
-                                                <option value="Neuroscience Doctor's Office/ Conf. Room">Neuroscience Doctor's Office/ Conf. Room</option>
-                                                <option value="Pedia Doctor's Office/ Conference Room">Pedia Doctor's Office/ Conference Room</option>
-                                                <option value="Transplant Service Office">Transplant Service Office</option>
-                                                <option value="Admission Department">Admission Department</option>
-                                                <option value="Social Service Dept">Social Service Dept</option>
-                                                <option value="Out-Patient Department (OPD)">Out-Patient Department (OPD)</option>
-                                                <option value="Emergency Care Services">Emergency Care Services</option>
-                                                <option value="Pre-Anesthetic Risk Evaluation &amp; Stratification (PARES) Clinic">Pre-Anesthetic Risk Evaluation &amp; Stratification (PARES) Clinic</option>
-                                                <option value="Mood Disorder Center">Mood Disorder Center</option>
-                                                <option value="Pain Management Center">Pain Management Center</option>
-                                                <option value="Clinical Nutrition Services">Clinical Nutrition Services</option>
-                                                <option value="Wellness Center">Wellness Center</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-user-secret"></i>
-                                        </span>
-                                        <div class="form-group">
-                                            <label class="control-label" for="user-type-input">User Level:</label>
-                                            <select class="form-control uis" id="user-type-input">
-                                                <option value="user">User</option>
-                                                <option value="admin">Admin</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{/if}}
                                 </div>
                                 <div class="footer center-text">
                                     <a href="#" id="create-user-btn" class="btn btn-simple btn-info btn-lg">Get Started</a>

@@ -1,8 +1,28 @@
+Template.signupBody.onCreated(function() {
+    var instance = this;
+
+    instance.displayUnits = new ReactiveVar();
+    instance.displayUnits.set(true);
+
+    instance.subscribe('units');
+
+    instance.units = () => Units.find().fetch();
+});
+
+Template.signupBody.helpers({
+    units: () => Template.instance().units(),
+    displayUnits: () => Template.instance().displayUnits.get()
+});
+
 Template.signupBody.onRendered(function() {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
 Template.signupBody.events({
+    'change #user-type-input': function(event, instance) {
+        instance.displayUnits.set(event.target.value === 'user');
+    },
+
     'click #create-user-btn': function(event, instance) {
         var formInput = {
             'firstName': $('.first-name-input').val(),
