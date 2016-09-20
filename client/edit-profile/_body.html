@@ -51,9 +51,10 @@
                                                 </span>
                                                 <div class="form-group">
                                                     <label class="control-label" for="unit-input">Unit:</label>
-                                                    <select class="form-control uis" id="unit-input">
-                                                        <option value="test1">Test1</option>
-                                                        <option value="test2">Test2</option>
+                                                    <select class="form-control uis unit-input">
+                                                        {{#each units}}
+                                                            <option value="{{name}}">{{name}}</option>
+                                                        {{/each}}
                                                     </select>
                                                 </div>
                                             </div>

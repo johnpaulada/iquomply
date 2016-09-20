@@ -1,6 +1,9 @@
 Template.editProfileBody.onCreated(function() {
     var instance = this;
 
+    instance.subscribe('units');
+    instance.units = () => Units.find().fetch();
+
     instance.user = function() {
         return Meteor.users.findOne(Meteor.userId());
     }
@@ -13,6 +16,9 @@ Template.editProfileBody.onRendered(function() {
 Template.editProfileBody.helpers({
     user() {
         return Template.instance().user().profile;
+    },
+    units() {
+        return Template.instance().units();
     }
 });
 
