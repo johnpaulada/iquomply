@@ -36,12 +36,26 @@ function getAnalytics(unit) {
     const report = Reports.findOne({'userId': user._id}, {sort: {'dateSubmitted': -1}});
     const answers = AnswerCounter.count(report.progress);
     const complianceRatio = answers.yes / answers.total;
-    // TODO: If greater than 90%, okay -- commend
+
     if (complianceRatio > 0.9) {
-        return `${unit} is performing well, with a compliance ratio of ${complianceRatio*100}%`;
+        return `${unit} is performing well, with a compliance ratio of ${complianceRatio * 100}%`;
     } else {
-        const statusText = `${unit} is not performing well, with a compliance ratio of ${complianceRatio*100}%. Please contact ${user.profile.first_name} ${user.profile.last_name}.`;
-        console.log(ActionExtractor.extract(report.progress));
+        const statusText = `${unit} is not performing well, with a compliance ratio of ${complianceRatio * 100}%. Please contact ${user.profile.first_name} ${user.profile.last_name}.`;
+
+        const actions            = ActionExtractor.extract(report.progress);
+
+        const stringifiedActions = actions.map(function(value) {
+            const name = value.name;
+            const transformed = value.actions.reduce(function(previous, current) { return `${previous}${current}\n` }, '');
+
+            return `Chapter: ${name}\n${stringifiedActions}`;
+        });
+
+        const actionsText = actions.reduce((previous, current) => `${previous}\n${current}`, '');
+
+        console.log(actions);
+        console.log(stringifiedActions);
+        console.log(actionsText);
 
         return statusText;
     }
