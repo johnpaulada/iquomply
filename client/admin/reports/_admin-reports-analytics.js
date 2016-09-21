@@ -25,19 +25,35 @@ Template.adminReportsAnalytics.events({
 });
 
 function getHospitalWide() {
-    return '';
+    const threshold = 0.75;
+    const users = Meteor.users.find().fetch();
+    const reports = users.map((user) => Reports.findOne({'userId': user._id}, {sort: {'dateSubmitted': -1}}));
+    const complianceStats = reports.reduce(function(previous, current) {
+        current = AnswerCounter.count(current.progress);
+
+        return {yes: previous.yes + current.yes, no: previous.no + current.no, partially: previous.partially + current.partially, total: previous.yes + current.yes + previous.no + current.no + previous.partially + current.partially};
+    }, {yes: 0, no: 0, partially: 0, total: 0});
+
+    const ratio = complianceStats.yes / complianceStats.total;
+
+    if (ratio > threshold) {
+        return `Overall performance is doing well at ${ratio*100}%.`
+    } else {
+        return `Overall performance is not doing well at ${ratio*100}%.`
+    }
 }
 
 function getAnalytics(unit) {
     import ActionExtractor from '../../lib/ActionExtractor';
 
+    const threshold       = 0.9;
     const user            = Meteor.users.findOne({'profile.unit': unit});
     const name            = user.profile.firstName + ' ' + user.profile.lastName;
     const report          = Reports.findOne({'userId': user._id}, {sort: {'dateSubmitted': -1}});
     const answers         = AnswerCounter.count(report.progress);
     const complianceRatio = answers.yes / answers.total;
 
-    if (complianceRatio > 0.9) {
+    if (complianceRatio > threshold) {
         return `${unit} is performing well, with a compliance ratio of ${complianceRatio * 100}%`;
     } else {
         const statusText = `${unit} is not performing well, with a compliance ratio of ${complianceRatio * 100}%. Please contact ${name}.`;
@@ -55,8 +71,6 @@ function getAnalytics(unit) {
 
         return `${statusText}\n\nActions to be done:\n${actionsText}`;
     }
-
-    // TODO: If less, contact person responsible and prioritize actions to be done
 
     return unit;
 }
